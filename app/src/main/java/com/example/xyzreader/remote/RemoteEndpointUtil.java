@@ -14,42 +14,48 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class RemoteEndpointUtil {
+
+    // constants
     private static final String TAG = "RemoteEndpointUtil";
 
-    private RemoteEndpointUtil() {
-    }
+    private RemoteEndpointUtil() {}
 
     public static JSONArray fetchJsonArray() {
+
+        // get content from Udacity server using helper function
         String itemsJson = null;
         try {
             itemsJson = fetchPlainText(Config.BASE_URL);
         } catch (IOException e) {
-            Log.e(TAG, "Error fetching items JSON", e);
+            Log.e(TAG, "Error fetching JSON.", e);
             return null;
         }
 
-        // Parse JSON
+        // parse the JSON into array tokens
         try {
             JSONTokener tokener = new JSONTokener(itemsJson);
             Object val = tokener.nextValue();
             if (!(val instanceof JSONArray)) {
-                throw new JSONException("Expected JSONArray");
+                throw new JSONException("Expected JSONArray.");
             }
             return (JSONArray) val;
         } catch (JSONException e) {
-            Log.e(TAG, "Error parsing items JSON", e);
+            Log.e(TAG, "Error parsing JSON.", e);
         }
 
         return null;
     }
 
+    // get content from Udacity server
     static String fetchPlainText(URL url) throws IOException {
+
+        // third party library
         OkHttpClient client = new OkHttpClient();
 
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
+        // formulate URL into library object
+        Request request = new Request.Builder().url(url).build();
 
+        // obtain response as string from Udacity server
         Response response = client.newCall(request).execute();
         return response.body().string();
     }
