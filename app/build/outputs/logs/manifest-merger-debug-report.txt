@@ -1,8 +1,8 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:1:1-48:12
-INJECTED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:1:1-48:12
-INJECTED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:1:1-48:12
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:1:1-54:12
+INJECTED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:1:1-54:12
+INJECTED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:1:1-54:12
 MERGED from [com.android.support:support-v13:25.4.0] C:\Users\Drew\.gradle\caches\transforms-1\files-1.1\support-v13-25.4.0.aar\96ec6bacb4c66d85ed2b5482df3aa1e8\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:25.4.0] C:\Users\Drew\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.4.0.aar\39eb3a712b2105f4c6f5f1eb49778349\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-v4:25.4.0] C:\Users\Drew\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\49d9d94b80a10b51b948f0960c3e5450\AndroidManifest.xml:17:1-31:12
@@ -16,38 +16,40 @@ MERGED from [com.android.support:animated-vector-drawable:25.4.0] C:\Users\Drew\
 MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\Drew\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\a9daae4a4609dbc4803f670bbacc9c42\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-vector-drawable:25.4.0] C:\Users\Drew\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.4.0.aar\7f0c6e4a791d700e9d8bf547a64e3951\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-compat:25.4.0] C:\Users\Drew\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\204deff9908f439699617d68b0d9a0ad\AndroidManifest.xml:17:1-31:12
-INJECTED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:1:1-48:12
-INJECTED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:1:1-48:12
+INJECTED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:1:1-54:12
+INJECTED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:1:1-54:12
 	package
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:2:5-36
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:4:5-36
 	android:versionName
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:4:5-30
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:6:5-30
 		INJECTED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:3:5-51
 	xmlns:android
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:2:5-63
 	android:versionCode
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:3:5-28
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:5:5-28
 		INJECTED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:6:5-67
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:9:5-67
 	android:name
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:6:22-64
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:9:22-64
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:7:5-81
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:10:5-81
 	android:name
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:7:22-78
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:10:22-78
 uses-permission#android.permission.BROADCAST_STICKY
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:8:5-75
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:11:5-75
 	android:name
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:8:22-72
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:11:22-72
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:9:5-79
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:12:5-79
 	android:name
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:9:22-76
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:12:22-76
 application
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:11:5-46:19
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:14:5-52:19
 MERGED from [com.android.support:support-v13:25.4.0] C:\Users\Drew\.gradle\caches\transforms-1\files-1.1\support-v13-25.4.0.aar\96ec6bacb4c66d85ed2b5482df3aa1e8\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-v13:25.4.0] C:\Users\Drew\.gradle\caches\transforms-1\files-1.1\support-v13-25.4.0.aar\96ec6bacb4c66d85ed2b5482df3aa1e8\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:25.4.0] C:\Users\Drew\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.4.0.aar\39eb3a712b2105f4c6f5f1eb49778349\AndroidManifest.xml:25:5-29:19
@@ -75,69 +77,71 @@ MERGED from [com.android.support:support-vector-drawable:25.4.0] C:\Users\Drew\.
 MERGED from [com.android.support:support-compat:25.4.0] C:\Users\Drew\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\204deff9908f439699617d68b0d9a0ad\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-compat:25.4.0] C:\Users\Drew\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\204deff9908f439699617d68b0d9a0ad\AndroidManifest.xml:25:5-29:19
 	android:label
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:14:9-41
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:17:9-41
 	android:icon
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:13:9-43
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:16:9-43
 	android:allowBackup
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:15:9-35
 	android:theme
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:15:9-43
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:18:9-43
 activity#com.example.xyzreader.ui.ArticleListActivity
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:17:9-24:20
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:21:9-28:20
 	android:label
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:19:13-45
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:23:13-45
 	android:name
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:18:13-51
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:22:13-51
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:20:13-23:29
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:24:13-27:29
 action#android.intent.action.MAIN
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:21:17-69
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:25:17-69
 	android:name
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:21:25-66
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:22:17-77
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:26:17-77
 	android:name
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:22:27-74
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:26:27-74
 activity#com.example.xyzreader.ui.ArticleDetailActivity
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:26:9-37:20
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:31:9-43:20
 	android:parentActivityName
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:28:13-65
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:33:13-65
 	android:name
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:27:13-53
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:32:13-53
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.DEFAULT+data:mimeType:vnd.android.cursor.item/vnd.com.example.xyzreader.items
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:29:13-33:29
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:35:13-39:29
+	tools:ignore
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:35:28-58
 action#android.intent.action.VIEW
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:30:17-69
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:36:17-69
 	android:name
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:30:25-66
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:36:25-66
 category#android.intent.category.DEFAULT
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:31:17-76
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:37:17-76
 	android:name
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:31:27-73
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:37:27-73
 data
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:32:17-100
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:38:17-100
 	android:mimeType
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:32:23-97
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:38:23-97
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:34:13-36:59
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:40:13-42:64
 	android:value
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:36:17-56
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:42:17-61
 	android:name
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:35:17-63
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:41:17-63
 service#com.example.xyzreader.data.UpdaterService
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:39:9-40:40
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:45:9-46:40
 	android:exported
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:40:13-37
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:46:13-37
 	android:name
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:39:18-53
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:45:18-53
 provider#com.example.xyzreader.data.ItemsProvider
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:42:9-44:40
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:48:9-50:40
 	android:authorities
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:43:13-56
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:49:13-56
 	android:exported
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:44:13-37
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:50:13-37
 	android:name
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:42:19-53
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:48:19-53
 uses-sdk
 INJECTED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml
