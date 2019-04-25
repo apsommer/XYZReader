@@ -35,6 +35,9 @@ public class UpdaterService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
 
+        // TODO the passed intent is not used, this service updates the database every time its started
+        // TODO a check against the existing database values should be implemented first
+
         // get current time
         Time time = new Time();
 

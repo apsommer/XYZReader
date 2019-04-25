@@ -1,11 +1,11 @@
 #Internal package file, do not edit.
-#Tue Apr 23 14:08:38 PDT 2019
-1.base=C\:\\Android\\XYZReader\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+#Wed Apr 24 14:36:30 PDT 2019
+1.base=C\:\\Android\\XYZReader\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 0.baseType=DIRECTORY
 1.baseType=DIRECTORY
 count=2
 1.set=DEX
 0.path=Rosario-Regular.ttf
 0.set=ASSET
-0.base=C\:\\Android\\XYZReader\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+0.base=C\:\\Android\\XYZReader\\app\\build\\intermediates\\merged_assets\\debug\\out
 1.path=classes.dex
