@@ -56,11 +56,12 @@ public class ArticleListActivity extends AppCompatActivity
     // most time functions can only handle years 1902 - 2037
     private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2,1,1);
 
-    // track the status of "refreshing"
+    // track the status of the UI "refreshing"
     private boolean mIsRefreshing;
 
     // a broadcast receiver updates the UI if necessary
     private BroadcastReceiver mRefreshingReceiver = new BroadcastReceiver() {
+
         @Override
         public void onReceive(Context context, Intent intent) {
 
@@ -102,6 +103,8 @@ public class ArticleListActivity extends AppCompatActivity
     protected void onStart() {
         super.onStart();
         IntentFilter intentFilterStateChange = new IntentFilter(UpdaterService.BROADCAST_ACTION_STATE_CHANGE);
+
+        // results in system broadcast and system call to UpdaterService onHandleIntent()
         registerReceiver(mRefreshingReceiver, intentFilterStateChange);
     }
 
@@ -112,12 +115,13 @@ public class ArticleListActivity extends AppCompatActivity
         unregisterReceiver(mRefreshingReceiver);
     }
 
-    // returns an ArticleLoader
+    // returns an ArticleLoader that pulls from the local persistent database
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
         return ArticleLoader.newAllArticlesInstance(this);
     }
 
+    // populate UI using local DB contents
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
 
@@ -137,6 +141,7 @@ public class ArticleListActivity extends AppCompatActivity
         mRecyclerView.setLayoutManager(staggeredGridLayoutManager);
     }
 
+    // refresh the UI
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
 
@@ -144,6 +149,7 @@ public class ArticleListActivity extends AppCompatActivity
         mRecyclerView.setAdapter(null);
     }
 
+    // simple adapter using a local DB cursor and viewholder
     private class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
         // member variable
