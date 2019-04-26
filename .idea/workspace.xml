@@ -54,56 +54,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5eb3ec83-2a86-4bdc-9f3a-e144a40b1474" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/data/ArticleLoader$Query.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/data/ArticleLoader$Query.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/data/ArticleLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/data/ArticleLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailActivity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailActivity$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailActivity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailActivity$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailActivity$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailActivity$MyPagerAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailFragment$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailFragment$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailFragment$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailFragment$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailFragment$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailFragment$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailFragment$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailFragment$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleDetailFragment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleListActivity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleListActivity$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleListActivity$Adapter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleListActivity$Adapter$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleListActivity$Adapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleListActivity$Adapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleListActivity$ViewHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleListActivity$ViewHolder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleListActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/xyzreader/ui/ArticleListActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/data/ArticleLoader$Query.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/data/ArticleLoader$Query.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/data/ArticleLoader.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/data/ArticleLoader.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailActivity$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailActivity$1.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailActivity$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailActivity$2.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailActivity$3.dex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailActivity$MyPagerAdapter.dex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailFragment$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailFragment$1.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailFragment$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailFragment$2.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailFragment$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailFragment$3.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailFragment$4.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailFragment$4.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleDetailFragment.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleListActivity$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleListActivity$1.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleListActivity$Adapter$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleListActivity$Adapter$1.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleListActivity$Adapter.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleListActivity$Adapter.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleListActivity$ViewHolder.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleListActivity$ViewHolder.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleListActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/156/com/example/xyzreader/ui/ArticleListActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/data/ArticleLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/data/ArticleLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ArticleDetailActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ArticleDetailActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ArticleDetailFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ArticleDetailFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ArticleListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ArticleListActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_article_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_article_detail.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,12 +75,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ArticleListActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="51" selection-start-line="51" selection-end-line="56" selection-end-column="76" />
+            <state relative-caret-position="408">
+              <caret line="218" column="12" lean-forward="true" selection-start-line="218" selection-start-column="12" selection-end-line="218" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#ArticleListActivity#0" />
-                <element signature="method#parsePublishedDate#0;class#Adapter#0;class#ArticleListActivity#0" />
                 <element signature="e#8269#8270#0" expanded="true" />
                 <element signature="e#8318#8319#0" expanded="true" />
               </folding>
@@ -139,7 +90,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ArticleDetailActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1092">
+            <state relative-caret-position="3175">
               <caret line="213" column="46" selection-start-line="213" selection-start-column="46" selection-end-line="213" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -170,49 +121,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ArticleDetailFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="113" column="4" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
+            <state relative-caret-position="244">
+              <caret line="348" column="42" selection-start-line="348" selection-start-column="42" selection-end-line="348" selection-end-column="42" />
               <folding>
-                <element signature="e#3657#3742#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#3692#3777#0" expanded="true" />
                 <element signature="e#3410#3411#0" expanded="true" />
                 <element signature="e#3470#3471#0" expanded="true" />
-                <element signature="method#onActivityCreated#0;class#ArticleDetailFragment#0" />
-                <element signature="e#3612#3700#0" />
-                <element signature="method#onCreateView#0;class#ArticleDetailFragment#0" />
-                <element signature="class#4397:4580" />
-                <element signature="class#4707:5114" />
-                <element signature="method#onScrollChanged#0;class#4707:5114" />
-                <element signature="class#5391:5777" />
-                <element signature="method#onClick#0;class#5391:5777" />
-                <element signature="method#updateStatusBar#0;class#ArticleDetailFragment#0" />
-                <element signature="e#5988#6393#1" />
-                <element signature="method#progress#0;class#ArticleDetailFragment#0" />
-                <element signature="method#constrain#0;class#ArticleDetailFragment#0" />
-                <element signature="e#6734#6769#1" />
-                <element signature="e#6790#6825#1" />
-                <element signature="e#6831#6866#1" />
-                <element signature="method#parsePublishedDate#0;class#ArticleDetailFragment#0" />
-                <element signature="e#6926#7061#0" />
-                <element signature="e#7088#7219#0" />
-                <element signature="method#bindViews#0;class#ArticleDetailFragment#0" />
-                <element signature="e#7289#7320#1" />
-                <element signature="e#7777#10213#1" />
-                <element signature="e#8104#8636#1" />
-                <element signature="e#8642#8981#1" />
-                <element signature="class#9259:10201" />
-                <element signature="method#onResponse#0;class#9259:10201" />
-                <element signature="e#9546#10012#1" />
-                <element signature="method#onErrorResponse#0;class#9259:10201" />
-                <element signature="e#10219#10393#1" />
-                <element signature="method#onCreateLoader#0;class#ArticleDetailFragment#0" />
-                <element signature="method#onLoadFinished#0;class#ArticleDetailFragment#0" />
-                <element signature="e#10677#10788#1" />
-                <element signature="e#10711#10758#1" />
-                <element signature="e#10871#10999#1" />
-                <element signature="method#onLoaderReset#0;class#ArticleDetailFragment#0" />
-                <element signature="method#getUpButtonFloor#0;class#ArticleDetailFragment#0" />
-                <element signature="e#11264#11313#1" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_article_detail.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-250">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
@@ -238,39 +164,8 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ImageLoaderHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1125">
-              <caret line="45" column="51" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#997#998#0" expanded="true" />
-                <element signature="e#1056#1057#0" expanded="true" />
-                <element signature="e#1129#1130#0" expanded="true" />
-                <element signature="e#1188#1189#0" expanded="true" />
-                <element signature="e#1307#1308#0" expanded="true" />
-                <element signature="e#1342#1343#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/macro_layout.xml">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/data/ItemsContract.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
-              <folding>
-                <element signature="e#1273#1274#0" expanded="true" />
-                <element signature="e#1337#1338#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -283,6 +178,11 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>&lt;htm</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -305,6 +205,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/data/ArticleLoader.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ArticleListActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ArticleDetailActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_article_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ArticleDetailFragment.java" />
       </list>
     </option>
@@ -471,7 +372,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="5e200a09" />
+    <property name="device.picker.selection" value="G000N60783560BDF" />
     <property name="project.structure.last.edited" value="Suggestions" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.71166664" />
@@ -649,7 +550,7 @@
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Preview" order="4" />
+      <window_info anchor="right" id="Preview" order="4" weight="0.28464818" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="right" id="Assistant" order="6" weight="0.32995737" />
     </layout>
@@ -831,23 +732,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ArticleListActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/macro_layout.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-sw600dp-land/macro_layout.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_article_detail.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="51" selection-start-line="51" selection-end-line="56" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#ArticleListActivity#0" />
-            <element signature="method#parsePublishedDate#0;class#Adapter#0;class#ArticleListActivity#0" />
-            <element signature="e#8269#8270#0" expanded="true" />
-            <element signature="e#8318#8319#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-250">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/android.jar!/android/graphics/Color.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="242" column="25" selection-start-line="242" selection-start-column="25" selection-end-line="242" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ArticleDetailActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
+        <state relative-caret-position="3175">
           <caret line="213" column="46" selection-start-line="213" selection-start-column="46" selection-end-line="213" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -874,56 +782,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/macro_layout.xml">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ArticleListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="218" column="12" lean-forward="true" selection-start-line="218" selection-start-column="12" selection-end-line="218" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#ArticleListActivity#0" />
+            <element signature="e#8269#8270#0" expanded="true" />
+            <element signature="e#8318#8319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-sw600dp-land/macro_layout.xml">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d34b9e47e75d7c792cf9d3f339a92304/jars/classes.jar!/android/support/v4/app/Fragment.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="428" lean-forward="true" selection-start-line="428" selection-end-line="428" />
+          <folding>
+            <element signature="e#14321#14322#0" expanded="true" />
+            <element signature="e#14377#14378#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xyzreader/ui/ArticleDetailFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="113" column="4" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
+        <state relative-caret-position="244">
+          <caret line="348" column="42" selection-start-line="348" selection-start-column="42" selection-end-line="348" selection-end-column="42" />
           <folding>
-            <element signature="e#3657#3742#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3692#3777#0" expanded="true" />
             <element signature="e#3410#3411#0" expanded="true" />
             <element signature="e#3470#3471#0" expanded="true" />
-            <element signature="method#onActivityCreated#0;class#ArticleDetailFragment#0" />
-            <element signature="e#3612#3700#0" />
-            <element signature="method#onCreateView#0;class#ArticleDetailFragment#0" />
-            <element signature="class#4397:4580" />
-            <element signature="class#4707:5114" />
-            <element signature="method#onScrollChanged#0;class#4707:5114" />
-            <element signature="class#5391:5777" />
-            <element signature="method#onClick#0;class#5391:5777" />
-            <element signature="method#updateStatusBar#0;class#ArticleDetailFragment#0" />
-            <element signature="e#5988#6393#1" />
-            <element signature="method#progress#0;class#ArticleDetailFragment#0" />
-            <element signature="method#constrain#0;class#ArticleDetailFragment#0" />
-            <element signature="e#6734#6769#1" />
-            <element signature="e#6790#6825#1" />
-            <element signature="e#6831#6866#1" />
-            <element signature="method#parsePublishedDate#0;class#ArticleDetailFragment#0" />
-            <element signature="e#6926#7061#0" />
-            <element signature="e#7088#7219#0" />
-            <element signature="method#bindViews#0;class#ArticleDetailFragment#0" />
-            <element signature="e#7289#7320#1" />
-            <element signature="e#7777#10213#1" />
-            <element signature="e#8104#8636#1" />
-            <element signature="e#8642#8981#1" />
-            <element signature="class#9259:10201" />
-            <element signature="method#onResponse#0;class#9259:10201" />
-            <element signature="e#9546#10012#1" />
-            <element signature="method#onErrorResponse#0;class#9259:10201" />
-            <element signature="e#10219#10393#1" />
-            <element signature="method#onCreateLoader#0;class#ArticleDetailFragment#0" />
-            <element signature="method#onLoadFinished#0;class#ArticleDetailFragment#0" />
-            <element signature="e#10677#10788#1" />
-            <element signature="e#10711#10758#1" />
-            <element signature="e#10871#10999#1" />
-            <element signature="method#onLoaderReset#0;class#ArticleDetailFragment#0" />
-            <element signature="method#getUpButtonFloor#0;class#ArticleDetailFragment#0" />
-            <element signature="e#11264#11313#1" />
           </folding>
         </state>
       </provider>

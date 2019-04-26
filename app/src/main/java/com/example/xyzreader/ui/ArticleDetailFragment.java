@@ -117,6 +117,7 @@ public class ArticleDetailFragment extends Fragment implements
         return (ArticleDetailActivity) getActivity();
     }
 
+    // initialize the loader
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -131,30 +132,35 @@ public class ArticleDetailFragment extends Fragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        
+
+        // inflate the layout
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
-        mDrawInsetsFrameLayout = (DrawInsetsFrameLayout)
-                mRootView.findViewById(R.id.draw_insets_frame_layout);
-        mDrawInsetsFrameLayout.setOnInsetsCallback(new DrawInsetsFrameLayout.OnInsetsCallback() {
-            @Override
-            public void onInsetsChanged(Rect insets) {
-                mTopInset = insets.top;
-            }
-        });
 
-        mScrollView = (ObservableScrollView) mRootView.findViewById(R.id.scrollview);
-        mScrollView.setCallbacks(new ObservableScrollView.Callbacks() {
-            @Override
-            public void onScrollChanged() {
-                mScrollY = mScrollView.getScrollY();
-                getActivityCast().onUpButtonFloorChanged(mItemId, ArticleDetailFragment.this);
-                mPhotoContainerView.setTranslationY((int) (mScrollY - mScrollY / PARALLAX_FACTOR));
-                updateStatusBar();
-            }
-        });
-
-        mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
+        // get view references
+        mDrawInsetsFrameLayout = mRootView.findViewById(R.id.draw_insets_frame_layout);
+        mScrollView = mRootView.findViewById(R.id.scrollview);
+        mPhotoView = mRootView.findViewById(R.id.photo);
         mPhotoContainerView = mRootView.findViewById(R.id.photo_container);
+
+        // get system top inset dimension when it changes
+        mDrawInsetsFrameLayout.setOnInsetsCallback((Rect insets) -> mTopInset = insets.top);
+
+        //
+        mScrollView.setCallbacks(() -> {
+
+            // get scroll position
+            mScrollY = mScrollView.getScrollY();
+
+            // callback to activity to change location of up button
+            getActivityCast().onUpButtonFloorChanged(mItemId, ArticleDetailFragment.this);
+
+            // set the top of the photo
+            mPhotoContainerView.setTranslationY((int) (mScrollY - mScrollY / PARALLAX_FACTOR));
+
+
+            updateStatusBar();
+        });
+
 
         mStatusBarColorDrawable = new ColorDrawable(0);
 
@@ -173,25 +179,35 @@ public class ArticleDetailFragment extends Fragment implements
         return mRootView;
     }
 
+    //
     private void updateStatusBar() {
+
         int color = 0;
         if (mPhotoView != null && mTopInset != 0 && mScrollY > 0) {
+
+            // fraction of status bar scrolling capacity
             float f = progress(mScrollY,
                     mStatusBarFullOpacityBottom - mTopInset * 3,
                     mStatusBarFullOpacityBottom - mTopInset);
+
+            // define color as int from framework utility
             color = Color.argb((int) (255 * f),
                     (int) (Color.red(mMutedColor) * 0.9),
                     (int) (Color.green(mMutedColor) * 0.9),
                     (int) (Color.blue(mMutedColor) * 0.9));
         }
+
+        // set color of the status bar and framelayout insets
         mStatusBarColorDrawable.setColor(color);
         mDrawInsetsFrameLayout.setInsetBackground(mStatusBarColorDrawable);
     }
 
+    // fraction of total status bar scrolling capacity
     static float progress(float v, float min, float max) {
         return constrain((v - min) / (max - min), 0, 1);
     }
 
+    // bound a number between min and max values
     static float constrain(float val, float min, float max) {
         if (val < min) {
             return min;
@@ -202,35 +218,46 @@ public class ArticleDetailFragment extends Fragment implements
         }
     }
 
+    // reformat date string
     private Date parsePublishedDate() {
         try {
             String date = mCursor.getString(ArticleLoader.Query.PUBLISHED_DATE);
             return dateFormat.parse(date);
         } catch (ParseException ex) {
             Log.e(TAG, ex.getMessage());
-            Log.i(TAG, "passing today's date");
+            Log.i(TAG, "Error passing today's date.");
             return new Date();
         }
     }
 
+
     private void bindViews() {
+
+        // check that the root layout is valid
         if (mRootView == null) {
             return;
         }
 
-        TextView titleView = (TextView) mRootView.findViewById(R.id.article_title);
-        TextView bylineView = (TextView) mRootView.findViewById(R.id.article_byline);
+        // get view references
+        TextView titleView = mRootView.findViewById(R.id.article_title);
+        TextView bylineView = mRootView.findViewById(R.id.article_byline);
         bylineView.setMovementMethod(new LinkMovementMethod());
-        TextView bodyView = (TextView) mRootView.findViewById(R.id.article_body);
+        TextView bodyView = mRootView.findViewById(R.id.article_body);
 
-
+        // custom font for article body
         bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "Rosario-Regular.ttf"));
 
         if (mCursor != null) {
+
+            // TODO this is supposed to animated the entire layout but appears to have no affect
             mRootView.setAlpha(0);
             mRootView.setVisibility(View.VISIBLE);
             mRootView.animate().alpha(1);
+
+            // display the title
             titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
+
+            // display the date and author using <html> tag format
             Date publishedDate = parsePublishedDate();
             if (!publishedDate.before(START_OF_EPOCH.getTime())) {
                 bylineView.setText(Html.fromHtml(
@@ -241,18 +268,22 @@ public class ArticleDetailFragment extends Fragment implements
                                 + " by <font color='#ffffff'>"
                                 + mCursor.getString(ArticleLoader.Query.AUTHOR)
                                 + "</font>"));
-
             } else {
-                // If date is before 1902, just show the string
                 bylineView.setText(Html.fromHtml(
                         outputFormat.format(publishedDate) + " by <font color='#ffffff'>"
                         + mCursor.getString(ArticleLoader.Query.AUTHOR)
                                 + "</font>"));
 
             }
-            bodyView.setText(Html.fromHtml(mCursor.getString(ArticleLoader.Query.BODY).replaceAll("(\r\n|\n)", "<br />")));
+
+            // display the article body using <html> tag format
+            bodyView.setText(Html.fromHtml(
+                    mCursor.getString(ArticleLoader.Query.BODY).replaceAll("(\r\n|\n)", "<br />")));
+
+            // set the article image using the 'volley' library
             ImageLoaderHelper.getInstance(getActivity()).getImageLoader()
                     .get(mCursor.getString(ArticleLoader.Query.PHOTO_URL), new ImageLoader.ImageListener() {
+
                         @Override
                         public void onResponse(ImageLoader.ImageContainer imageContainer, boolean b) {
                             Bitmap bitmap = imageContainer.getBitmap();
@@ -260,18 +291,18 @@ public class ArticleDetailFragment extends Fragment implements
                                 Palette p = Palette.generate(bitmap, 12);
                                 mMutedColor = p.getDarkMutedColor(0xFF333333);
                                 mPhotoView.setImageBitmap(imageContainer.getBitmap());
-                                mRootView.findViewById(R.id.meta_bar)
-                                        .setBackgroundColor(mMutedColor);
+                                mRootView.findViewById(R.id.meta_bar).setBackgroundColor(mMutedColor);
                                 updateStatusBar();
                             }
                         }
 
                         @Override
-                        public void onErrorResponse(VolleyError volleyError) {
-
-                        }
+                        public void onErrorResponse(VolleyError volleyError) {}
                     });
+
+        // there is no article so hide everything
         } else {
+
             mRootView.setVisibility(View.GONE);
             titleView.setText("N/A");
             bylineView.setText("N/A" );
@@ -279,7 +310,7 @@ public class ArticleDetailFragment extends Fragment implements
         }
     }
 
-
+    // create a new ArticleLoader
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
         return ArticleLoader.newInstanceForItemId(getActivity(), mItemId);
@@ -287,6 +318,8 @@ public class ArticleDetailFragment extends Fragment implements
 
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
+
+        // if the fragment is not added yet then close the cursor
         if (!isAdded()) {
             if (cursor != null) {
                 cursor.close();
@@ -294,6 +327,7 @@ public class ArticleDetailFragment extends Fragment implements
             return;
         }
 
+        // check that the cursor loaded correctly
         mCursor = cursor;
         if (mCursor != null && !mCursor.moveToFirst()) {
             Log.e(TAG, "Error reading item detail cursor");
@@ -301,15 +335,18 @@ public class ArticleDetailFragment extends Fragment implements
             mCursor = null;
         }
 
+        // update UI with the finished cursor
         bindViews();
     }
 
+    // remove the cursor and update the UI
     @Override
     public void onLoaderReset(Loader<Cursor> cursorLoader) {
         mCursor = null;
         bindViews();
     }
 
+    // return bottom position of up button
     public int getUpButtonFloor() {
         if (mPhotoContainerView == null || mPhotoView.getHeight() == 0) {
             return Integer.MAX_VALUE;
