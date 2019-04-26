@@ -122,9 +122,9 @@ ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:38:17-100
 	android:mimeType
 		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:38:23-97
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:40:13-42:64
+ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:40:13-42:59
 	android:value
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:42:17-61
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:42:17-56
 	android:name
 		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:41:17-63
 service#com.example.xyzreader.data.UpdaterService

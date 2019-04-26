@@ -49,7 +49,7 @@
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="PsiClass:ArticleListActivity" />
+                android:value=".ui.ArticleListActivity" />
         </activity>
 
         <service
