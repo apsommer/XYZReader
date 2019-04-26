@@ -1,4 +1,7 @@
-#Thu Apr 25 19:29:05 PDT 2019
+#Thu Apr 25 22:18:06 PDT 2019
 base.0=C\:\\Android\\XYZReader\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.1=classes.dex
+renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
+base.1=C\:\\Android\\XYZReader\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
