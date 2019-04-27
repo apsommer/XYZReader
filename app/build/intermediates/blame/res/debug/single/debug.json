@@ -12,6 +12,10 @@
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
+        "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_article_detail_material_design.xml.flat",
+        "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\layout\\activity_article_detail_material_design.xml"
+    },
+    {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\drawable-mdpi-v4\\abc_list_longpressed_holo.9.png"
     },
@@ -1492,10 +1496,6 @@
         "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\menu\\main.xml"
     },
     {
-        "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item_article.xml.flat",
-        "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\layout\\list_item_article.xml"
-    },
-    {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_btn_colored_text_material.xml.flat",
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\color-v23\\abc_btn_colored_text_material.xml"
     },
@@ -1662,10 +1662,6 @@
     {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_36dp.png.flat",
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_36dp.png"
-    },
-    {
-        "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_article_list.xml.flat",
-        "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\layout\\activity_article_list.xml"
     },
     {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_default_mtrl_shape.xml.flat",

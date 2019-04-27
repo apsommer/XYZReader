@@ -30,11 +30,12 @@ import com.example.xyzreader.R;
 
 
 public class DrawInsetsFrameLayout extends FrameLayout {
+
+    // member variables
     private Drawable mInsetBackground;
     private Drawable mTopInsetBackground;
     private Drawable mBottomInsetBackground;
     private Drawable mSideInsetBackground;
-
     private Rect mInsets;
     private Rect mTempRect = new Rect();
     private OnInsetsCallback mOnInsetsCallback;
@@ -55,10 +56,10 @@ public class DrawInsetsFrameLayout extends FrameLayout {
     }
 
     private void init(Context context, AttributeSet attrs, int defStyle) {
-        final TypedArray a = context.obtainStyledAttributes(attrs,
-                R.styleable.DrawInsetsFrameLayout, defStyle, 0);
-        assert a != null;
+        final TypedArray a = context.obtainStyledAttributes(
+                attrs, R.styleable.DrawInsetsFrameLayout, defStyle, 0);
 
+        assert a != null;
         mInsetBackground = a.getDrawable(R.styleable.DrawInsetsFrameLayout_insetBackground);
 
         a.recycle();

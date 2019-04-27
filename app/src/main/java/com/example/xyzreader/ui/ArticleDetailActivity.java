@@ -41,7 +41,7 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         super.onCreate(savedInstanceState);
 
         // inflate the detail layout
-        setContentView(R.layout.activity_article_detail);
+        setContentView(R.layout.activity_article_detail_material_design);
 
         // get reference to children views
         mPager = findViewById(R.id.pager);

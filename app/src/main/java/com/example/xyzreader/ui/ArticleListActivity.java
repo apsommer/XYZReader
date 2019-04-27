@@ -84,8 +84,6 @@ public class ArticleListActivity extends AppCompatActivity
         setContentView(R.layout.activity_article_list_material_design);
 
         // get view references
-        final View toolbarContainerView = findViewById(R.id.toolbar_container);
-        Toolbar mToolbar = findViewById(R.id.toolbar);
         mSwipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         mRecyclerView = findViewById(R.id.recycler_view);
 

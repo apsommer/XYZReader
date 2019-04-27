@@ -1191,7 +1191,6 @@ id title
 id titleDividerNoCustom
 id title_template
 id toolbar
-id toolbar_container
 id top
 id topPanel
 id touch_outside
@@ -1258,7 +1257,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_article_detail
-layout activity_article_list
+layout activity_article_detail_material_design
 layout activity_article_list_material_design
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1275,7 +1274,6 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_article_detail
-layout list_item_article
 layout list_item_article_material_design
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
@@ -1558,7 +1556,6 @@ style CardView
 style CardView_Dark
 style CardView_Light
 style CustomTheme
-style CustomTheme_Detail
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents
