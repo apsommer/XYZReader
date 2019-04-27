@@ -80,7 +80,7 @@ public class ArticleListActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         // inflate layout
-        setContentView(R.layout.activity_article_list);
+        setContentView(R.layout.activity_article_list_material_design);
 
         // get view references
         final View toolbarContainerView = findViewById(R.id.toolbar_container);
@@ -171,7 +171,7 @@ public class ArticleListActivity extends AppCompatActivity
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
             // inflate an article item layout
-            View view = getLayoutInflater().inflate(R.layout.list_item_article, parent, false);
+            View view = getLayoutInflater().inflate(R.layout.list_item_article_material_design, parent, false);
 
             // create a new viewholder
             final ViewHolder viewHolder = new ViewHolder(view);

@@ -29,6 +29,25 @@
                         "endColumns": "69,70,67",
                         "endOffsets": "120,191,259"
                     }
+                },
+                {
+                    "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\7674ce4d9ce9645527b705703ad81999\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "10",
+                        "endOffsets": "222"
+                    },
+                    "to": {
+                        "startLines": "7",
+                        "startColumns": "4",
+                        "startOffsets": "374",
+                        "endLines": "10",
+                        "endColumns": "10",
+                        "endOffsets": "541"
+                    }
                 }
             ]
         }
