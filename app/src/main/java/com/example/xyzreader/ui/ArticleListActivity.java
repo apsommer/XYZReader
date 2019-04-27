@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
@@ -136,9 +137,12 @@ public class ArticleListActivity extends AppCompatActivity
 
         // set number of columns in a staggered grid for the recycler view
         int columnCount = getResources().getInteger(R.integer.list_column_count);
-        StaggeredGridLayoutManager staggeredGridLayoutManager =
+        StaggeredGridLayoutManager layoutManager =
                 new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
-        mRecyclerView.setLayoutManager(staggeredGridLayoutManager);
+
+        // GridLayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), columnCount);
+
+        mRecyclerView.setLayoutManager(layoutManager);
     }
 
     // refresh the UI
@@ -226,6 +230,8 @@ public class ArticleListActivity extends AppCompatActivity
             holder.thumbnailView.setImageUrl(
                     mCursor.getString(ArticleLoader.Query.THUMB_URL),
                     ImageLoaderHelper.getInstance(ArticleListActivity.this).getImageLoader());
+
+            // this call overrides the aspect ratio set in DynamicHeightNetworkImageView
             holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
         }
 

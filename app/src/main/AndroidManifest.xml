@@ -44,7 +44,7 @@
                 android:value=".ui.ArticleListActivity" />
         </activity>
 
-        <!-- broadcast service for fetching from Udacity server -->
+        <!-- broadcast service for fetching data from Udacity server -->
         <service android:name=".data.UpdaterService"
             android:exported="false" />
 

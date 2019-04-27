@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Apr 26 18:00:35 PDT 2019
+#Fri Apr 26 20:26:09 PDT 2019
 0.baseType=DIRECTORY
 0.base=C\:\\Android\\XYZReader\\app\\build\\intermediates\\merged_assets\\debug\\out
 0.path=Rosario-Regular.ttf
