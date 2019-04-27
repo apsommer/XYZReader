@@ -10,4 +10,15 @@
 
     </style>
 
+    <!-- viewpager sliding tabs -->
+    <style name="TabStyle" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">#000000</item>
+        <item name="tabTextAppearance">@style/TabTextAppearance</item>
+    </style>
+
+    <!-- sliding tabs text appearance -->
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+
+    </style>
+
 </resources>

@@ -134,7 +134,8 @@ public class ArticleDetailFragment extends Fragment implements
             Bundle savedInstanceState) {
 
         // inflate the layout
-        mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
+        mRootView = inflater.inflate(R.layout.new_fragment
+                , container, false);
 
         // get view references
         mDrawInsetsFrameLayout = mRootView.findViewById(R.id.draw_insets_frame_layout);
@@ -143,26 +144,26 @@ public class ArticleDetailFragment extends Fragment implements
         mPhotoContainerView = mRootView.findViewById(R.id.photo_container);
 
         // get system top inset dimension when it changes
-        mDrawInsetsFrameLayout.setOnInsetsCallback((Rect insets) -> mTopInset = insets.top);
+//        mDrawInsetsFrameLayout.setOnInsetsCallback((Rect insets) -> mTopInset = insets.top);
 
         //
-        mScrollView.setCallbacks(() -> {
+//        mScrollView.setCallbacks(() -> {
+//
+//            // get scroll position
+//            mScrollY = mScrollView.getScrollY();
+//
+//            // callback to activity to change location of up button
+//            getActivityCast().onUpButtonFloorChanged(mItemId, ArticleDetailFragment.this);
+//
+//            // set the top of the photo
+//            mPhotoContainerView.setTranslationY((int) (mScrollY - mScrollY / PARALLAX_FACTOR));
+//
+//
+//            updateStatusBar();
+//        });
 
-            // get scroll position
-            mScrollY = mScrollView.getScrollY();
 
-            // callback to activity to change location of up button
-            getActivityCast().onUpButtonFloorChanged(mItemId, ArticleDetailFragment.this);
-
-            // set the top of the photo
-            mPhotoContainerView.setTranslationY((int) (mScrollY - mScrollY / PARALLAX_FACTOR));
-
-
-            updateStatusBar();
-        });
-
-
-        mStatusBarColorDrawable = new ColorDrawable(0);
+//        mStatusBarColorDrawable = new ColorDrawable(0);
 
         mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,48 +176,48 @@ public class ArticleDetailFragment extends Fragment implements
         });
 
         bindViews();
-        updateStatusBar();
+//        updateStatusBar();
         return mRootView;
     }
 
     //
-    private void updateStatusBar() {
-
-        int color = 0;
-        if (mPhotoView != null && mTopInset != 0 && mScrollY > 0) {
-
-            // fraction of status bar scrolling capacity
-            float f = progress(mScrollY,
-                    mStatusBarFullOpacityBottom - mTopInset * 3,
-                    mStatusBarFullOpacityBottom - mTopInset);
-
-            // define color as int from framework utility
-            color = Color.argb((int) (255 * f),
-                    (int) (Color.red(mMutedColor) * 0.9),
-                    (int) (Color.green(mMutedColor) * 0.9),
-                    (int) (Color.blue(mMutedColor) * 0.9));
-        }
-
-        // set color of the status bar and framelayout insets
-        mStatusBarColorDrawable.setColor(color);
-        mDrawInsetsFrameLayout.setInsetBackground(mStatusBarColorDrawable);
-    }
-
-    // fraction of total status bar scrolling capacity
-    static float progress(float v, float min, float max) {
-        return constrain((v - min) / (max - min), 0, 1);
-    }
-
-    // bound a number between min and max values
-    static float constrain(float val, float min, float max) {
-        if (val < min) {
-            return min;
-        } else if (val > max) {
-            return max;
-        } else {
-            return val;
-        }
-    }
+//    private void updateStatusBar() {
+//
+//        int color = 0;
+//        if (mPhotoView != null && mTopInset != 0 && mScrollY > 0) {
+//
+//            // fraction of status bar scrolling capacity
+//            float f = progress(mScrollY,
+//                    mStatusBarFullOpacityBottom - mTopInset * 3,
+//                    mStatusBarFullOpacityBottom - mTopInset);
+//
+//            // define color as int from framework utility
+//            color = Color.argb((int) (255 * f),
+//                    (int) (Color.red(mMutedColor) * 0.9),
+//                    (int) (Color.green(mMutedColor) * 0.9),
+//                    (int) (Color.blue(mMutedColor) * 0.9));
+//        }
+//
+//        // set color of the status bar and framelayout insets
+//        mStatusBarColorDrawable.setColor(color);
+//        mDrawInsetsFrameLayout.setInsetBackground(mStatusBarColorDrawable);
+//    }
+//
+//    // fraction of total status bar scrolling capacity
+//    static float progress(float v, float min, float max) {
+//        return constrain((v - min) / (max - min), 0, 1);
+//    }
+//
+//    // bound a number between min and max values
+//    static float constrain(float val, float min, float max) {
+//        if (val < min) {
+//            return min;
+//        } else if (val > max) {
+//            return max;
+//        } else {
+//            return val;
+//        }
+//    }
 
     // reformat date string
     private Date parsePublishedDate() {
@@ -292,7 +293,7 @@ public class ArticleDetailFragment extends Fragment implements
                                 mMutedColor = p.getDarkMutedColor(0xFF333333);
                                 mPhotoView.setImageBitmap(imageContainer.getBitmap());
                                 mRootView.findViewById(R.id.meta_bar).setBackgroundColor(mMutedColor);
-                                updateStatusBar();
+//                                updateStatusBar();
                             }
                         }
 

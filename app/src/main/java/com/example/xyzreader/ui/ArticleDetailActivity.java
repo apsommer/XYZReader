@@ -41,36 +41,36 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         super.onCreate(savedInstanceState);
 
         // inflate the detail layout
-        setContentView(R.layout.activity_article_detail_material_design);
+        setContentView(R.layout.activity_detail_material_design);
 
         // get reference to children views
         mPager = findViewById(R.id.pager);
-        mUpButton = findViewById(R.id.action_up);
-        mUpButtonContainer = findViewById(R.id.up_container);
+//        mUpButton = findViewById(R.id.action_up);
+//        mUpButtonContainer = findViewById(R.id.up_container);
 
         // for SDK > Lollipop
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-
-            // expand layout to full screen
-            getWindow().getDecorView().setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-
-            // customize the position of the up button
-            mUpButtonContainer.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
-                @Override
-                public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-
-                    // superclass
-                    view.onApplyWindowInsets(windowInsets);
-
-                    // get the top position of the window and set the up button to it
-                    mTopInset = windowInsets.getSystemWindowInsetTop();
-                    mUpButtonContainer.setTranslationY(mTopInset);
-                    updateUpButtonPosition();
-                    return windowInsets;
-                }
-            });
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//
+//            // expand layout to full screen
+//            getWindow().getDecorView().setSystemUiVisibility(
+//                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+//
+//            // customize the position of the up button
+//            mUpButtonContainer.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
+//                @Override
+//                public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+//
+//                    // superclass
+//                    view.onApplyWindowInsets(windowInsets);
+//
+//                    // get the top position of the window and set the up button to it
+//                    mTopInset = windowInsets.getSystemWindowInsetTop();
+//                    mUpButtonContainer.setTranslationY(mTopInset);
+//                    updateUpButtonPosition();
+//                    return windowInsets;
+//                }
+//            });
+//        }
 
         // instantiate a loader
         getSupportLoaderManager().initLoader(0, null, this);
@@ -97,9 +97,9 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
                 super.onPageScrollStateChanged(state);
 
                 // TODO fix this animation, currently produces a fade, make it spin
-                mUpButton.animate()
-                        .alpha((state == ViewPager.SCROLL_STATE_IDLE) ? 1f : 0f)
-                        .setDuration(300);
+//                mUpButton.animate()
+//                        .alpha((state == ViewPager.SCROLL_STATE_IDLE) ? 1f : 0f)
+//                        .setDuration(300);
             }
 
             // move cursor
@@ -109,12 +109,12 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
                     mCursor.moveToPosition(position);
                 }
                 mSelectedItemId = mCursor.getLong(ArticleLoader.Query._ID);
-                updateUpButtonPosition();
+//                updateUpButtonPosition();
             }
         });
 
         // normal up button behavior
-        mUpButton.setOnClickListener((View view) -> onSupportNavigateUp());
+//        mUpButton.setOnClickListener((View view) -> onSupportNavigateUp());
 
         // no saved state bundle the first time activity is run
         if (savedInstanceState == null) {
@@ -170,20 +170,20 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
     }
 
     // callback from the ActivityDetailFragment
-    public void onUpButtonFloorChanged(long itemId, ArticleDetailFragment fragment) {
-
-        // update the up button position
-        if (itemId == mSelectedItemId) {
-            mSelectedItemUpButtonFloor = fragment.getUpButtonFloor();
-            updateUpButtonPosition();
-        }
-    }
+//    public void onUpButtonFloorChanged(long itemId, ArticleDetailFragment fragment) {
+//
+//        // update the up button position
+//        if (itemId == mSelectedItemId) {
+//            mSelectedItemUpButtonFloor = fragment.getUpButtonFloor();
+//            updateUpButtonPosition();
+//        }
+//    }
 
     // move the up button to correct position in top left
-    private void updateUpButtonPosition() {
-        int upButtonNormalBottom = mTopInset + mUpButton.getHeight();
-        mUpButton.setTranslationY(Math.min(mSelectedItemUpButtonFloor - upButtonNormalBottom, 0));
-    }
+//    private void updateUpButtonPosition() {
+//        int upButtonNormalBottom = mTopInset + mUpButton.getHeight();
+//        mUpButton.setTranslationY(Math.min(mSelectedItemUpButtonFloor - upButtonNormalBottom, 0));
+//    }
 
     // simple adapter for viewpager
     private class DetailPagerAdapter extends FragmentStatePagerAdapter {
@@ -199,8 +199,8 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
             super.setPrimaryItem(container, position, object);
             ArticleDetailFragment fragment = (ArticleDetailFragment) object;
             if (fragment != null) {
-                mSelectedItemUpButtonFloor = fragment.getUpButtonFloor();
-                updateUpButtonPosition();
+//                mSelectedItemUpButtonFloor = fragment.getUpButtonFloor();
+//                updateUpButtonPosition();
             }
         }
 

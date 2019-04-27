@@ -13,10 +13,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.util.Log;
@@ -81,7 +79,7 @@ public class ArticleListActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         // inflate layout
-        setContentView(R.layout.activity_article_list_material_design);
+        setContentView(R.layout.activity_list_material_design);
 
         // get view references
         mSwipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
@@ -173,7 +171,7 @@ public class ArticleListActivity extends AppCompatActivity
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
             // inflate an article item layout
-            View view = getLayoutInflater().inflate(R.layout.list_item_article_material_design, parent, false);
+            View view = getLayoutInflater().inflate(R.layout.list_item_material_design, parent, false);
 
             // create a new viewholder
             final ViewHolder viewHolder = new ViewHolder(view);

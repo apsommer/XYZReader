@@ -772,6 +772,7 @@ dimen design_tab_scrollable_min_width
 dimen design_tab_text_size
 dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
+dimen detail_app_bar_height
 dimen detail_body_bottom_margin
 dimen detail_body_text_size
 dimen detail_body_top_margin
@@ -1022,7 +1023,6 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_text
-id action_up
 id actions
 id activity_chooser_view_content
 id add
@@ -1030,6 +1030,7 @@ id alertTitle
 id all
 id always
 id app_bar_layout
+id appbar
 id article_body
 id article_byline
 id article_subtitle
@@ -1063,6 +1064,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id detail_coordinator
 id disableHome
 id draw_insets_frame_layout
 id edit_query
@@ -1097,6 +1099,7 @@ id line1
 id line3
 id listMode
 id list_item
+id main_content
 id masked
 id media_actions
 id message
@@ -1173,6 +1176,7 @@ id submenuarrow
 id submit_area
 id swipe_refresh_layout
 id tabMode
+id tabs
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
@@ -1202,7 +1206,6 @@ id transition_transform
 id uniform
 id unlabeled
 id up
-id up_container
 id useLogo
 id view_offset_helper
 id visible
@@ -1256,9 +1259,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_article_detail
-layout activity_article_detail_material_design
-layout activity_article_list_material_design
+layout activity_detail_material_design
+layout activity_list_material_design
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1273,10 +1275,11 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
-layout fragment_article_detail
-layout list_item_article_material_design
+layout fragment_detail_material_design
+layout list_item_material_design
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
+layout new_fragment
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -1587,6 +1590,8 @@ style RtlOverlay_Widget_AppCompat_Search_DropDown_Text
 style RtlOverlay_Widget_AppCompat_SearchView_MagIcon
 style RtlUnderlay_Widget_AppCompat_ActionButton
 style RtlUnderlay_Widget_AppCompat_ActionButton_Overflow
+style TabStyle
+style TabTextAppearance
 style TextAppearance_AppCompat
 style TextAppearance_AppCompat_Body1
 style TextAppearance_AppCompat_Body2
