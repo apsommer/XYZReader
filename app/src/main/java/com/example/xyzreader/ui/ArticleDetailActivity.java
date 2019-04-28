@@ -1,8 +1,11 @@
 package com.example.xyzreader.ui;
 
+import android.graphics.Typeface;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.LoaderManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.Loader;
 import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
@@ -11,6 +14,9 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
 
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
@@ -46,6 +52,57 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         // create a custom adapter and associate it to the viewpager
         mPagerAdapter = new DetailPagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
+
+        // get reference to tablayout
+        TabLayout tabLayout = findViewById(R.id.tabs);
+
+        // associate the tablayout with the viewpager
+        // updates the tablayout on viewpager swipe, and on arbitrary selected tab
+        // tab names set with fragment adapter's onPageTitle()
+        tabLayout.setupWithViewPager(mPager);
+
+        // iterate through the tabs to set the custom view
+        for (int i = 0; i < tabLayout.getTabCount(); i++) {
+
+            // get reference to current tab
+            TabLayout.Tab tab = tabLayout.getTabAt(i);
+
+            // getTabView() is custom method in fragment adapter that returns inflated TextView
+            tab.setCustomView(mPagerAdapter.getTabView(i));
+        }
+
+        // format the first tab to ensure correct formatting on app start
+//        TabLayout.Tab tab = tabLayout.getTabAt(0);
+//        TextView textView = (TextView) tab.getCustomView(); // setCustomView executed in previous
+//        textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
+//        textView.setTypeface(custom_font, Typeface.BOLD);
+
+        // tab click listener
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
+            // selected tab is black color and bold style
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                TextView textView = (TextView) tab.getCustomView();
+//                textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
+//                textView.setTypeface(custom_font, Typeface.BOLD);
+            }
+
+            // unselected tab is gray color and normal style
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                TextView textView = (TextView) tab.getCustomView();
+//                textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.gray));
+//                textView.setTypeface(custom_font, Typeface.NORMAL);
+            }
+
+            // do nothing, same as selected state
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {}
+
+        });
+
+
 
         // convert margin from dp to raw px and set it on the viewpager
         // TODO make zero permanent?
@@ -139,6 +196,7 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         // get new article detail fragment
         @Override
         public Fragment getItem(int position) {
+
             mCursor.moveToPosition(position);
             return ArticleDetailFragment.newInstance(mCursor.getLong(ArticleLoader.Query._ID));
         }
@@ -148,5 +206,30 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         public int getCount() {
             return (mCursor != null) ? mCursor.getCount() : 0;
         }
+
+        // supplies labels for tablayout, called by viewpager
+        @Override
+        public CharSequence getPageTitle(int position) {
+
+            // TODO use article titles
+            return String.valueOf(position);
+        }
+
+        // returns an inflated custom tab layout textview
+        public View getTabView(int position) {
+
+            // root view is the single TextView
+            View tabView = LayoutInflater.from(getBaseContext()).inflate(R.layout.custom_tab, null);
+            TextView textView = tabView.findViewById(R.id.tabTextView);
+
+            // set the tab text, font, and capitalization
+            textView.setText(getPageTitle(position));
+            //Typeface custom_font = Typeface.createFromAsset(mContext.getAssets(), "font/adamina.ttf");
+            //textView.setTypeface(custom_font);
+            textView.setAllCaps(true);
+
+            return tabView;
+        }
+
     }
 }

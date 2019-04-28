@@ -1172,6 +1172,8 @@ id submenuarrow
 id submit_area
 id swipe_refresh_layout
 id tabMode
+id tabTextView
+id tabs
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
@@ -1256,6 +1258,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_detail_material_design
 layout activity_list_material_design
+layout custom_tab
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
