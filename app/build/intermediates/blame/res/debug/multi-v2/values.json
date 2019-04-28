@@ -161,11 +161,9 @@
                 {
                     "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\values\\dimens.xml",
                     "from": {
-                        "startLines": "9,-1,-1,-1,-1,-1,-1",
-                        "startColumns": "4,-1,-1,-1,-1,-1,-1",
-                        "startOffsets": "389,-1,-1,-1,-1,-1,-1",
-                        "endColumns": "53,-1,-1,-1,-1,-1,-1",
-                        "endOffsets": "438,-1,-1,-1,-1,-1,-1"
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1"
                     },
                     "to": {
                         "startLines": "267,269,277,280,281,282,375",

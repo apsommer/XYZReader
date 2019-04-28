@@ -1,15 +1,24 @@
 package com.example.xyzreader.ui;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.content.Intent;
+import android.support.v4.app.ShareCompat;
 import android.support.v4.content.Loader;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.Rect;
 import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
+import android.text.Html;
+import android.text.format.DateUtils;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageLoader;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -18,21 +27,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-import android.os.Bundle;
-import android.support.v4.app.ShareCompat;
-import android.support.v7.graphics.Palette;
-import android.text.Html;
-import android.text.format.DateUtils;
-import android.text.method.LinkMovementMethod;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.ImageLoader;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 
@@ -47,22 +41,12 @@ public class ArticleDetailFragment extends Fragment implements
     // constants
     private static final String TAG = "ArticleDetailFragment";
     public static final String ARG_ITEM_ID = "item_id";
-    private static final float PARALLAX_FACTOR = 1.25f;
 
     // member variables
     private Cursor mCursor;
     private long mItemId;
     private View mRootView;
-    private int mMutedColor = 0xFF333333;
-    private ObservableScrollView mScrollView;
-    private DrawInsetsFrameLayout mDrawInsetsFrameLayout;
-    private ColorDrawable mStatusBarColorDrawable;
-    private int mTopInset;
-    private View mPhotoContainerView;
     private ImageView mPhotoView;
-    private int mScrollY;
-    private boolean mIsCard = false;
-    private int mStatusBarFullOpacityBottom;
 
     // use default locale date formats
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss", Locale.US);
@@ -100,14 +84,6 @@ public class ArticleDetailFragment extends Fragment implements
             mItemId = getArguments().getLong(ARG_ITEM_ID);
         }
 
-        // boolean coming from marco_layout
-        // use a card for larger screens
-        mIsCard = getResources().getBoolean(R.bool.detail_is_card);
-
-        // set top margin from status bar to content pane
-        mStatusBarFullOpacityBottom = getResources().getDimensionPixelSize(
-                R.dimen.detail_card_top_margin);
-
         // TODO options menu not shown, is this overflow?
         setHasOptionsMenu(true);
     }
@@ -122,48 +98,21 @@ public class ArticleDetailFragment extends Fragment implements
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        // In support library r8, calling initLoader for a fragment in a FragmentPagerAdapter in
-        // the fragment's onCreate may cause the same LoaderManager to be dealt to multiple
-        // fragments because their mIndex is -1 (haven't been added to the activity yet). Thus,
-        // we do this in onActivityCreated.
+        // in support library r8, calling initLoader for a fragment in a FragmentPagerAdapter
+        // in the fragment's onCreate may cause the same LoaderManager to be dealt to multiple
+        // fragments because their mIndex is -1 since they haven't been added to the activity yet
+        // therefore make this call in onActivityCreated.
         getLoaderManager().initLoader(0, null, this);
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         // inflate the layout
-        mRootView = inflater.inflate(R.layout.new_fragment
-                , container, false);
+        mRootView = inflater.inflate(R.layout.fragment_detail_material_design, container, false);
 
         // get view references
-        mDrawInsetsFrameLayout = mRootView.findViewById(R.id.draw_insets_frame_layout);
-        mScrollView = mRootView.findViewById(R.id.scrollview);
         mPhotoView = mRootView.findViewById(R.id.photo);
-        mPhotoContainerView = mRootView.findViewById(R.id.photo_container);
-
-        // get system top inset dimension when it changes
-//        mDrawInsetsFrameLayout.setOnInsetsCallback((Rect insets) -> mTopInset = insets.top);
-
-        //
-//        mScrollView.setCallbacks(() -> {
-//
-//            // get scroll position
-//            mScrollY = mScrollView.getScrollY();
-//
-//            // callback to activity to change location of up button
-//            getActivityCast().onUpButtonFloorChanged(mItemId, ArticleDetailFragment.this);
-//
-//            // set the top of the photo
-//            mPhotoContainerView.setTranslationY((int) (mScrollY - mScrollY / PARALLAX_FACTOR));
-//
-//
-//            updateStatusBar();
-//        });
-
-
-//        mStatusBarColorDrawable = new ColorDrawable(0);
 
         mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -176,48 +125,8 @@ public class ArticleDetailFragment extends Fragment implements
         });
 
         bindViews();
-//        updateStatusBar();
         return mRootView;
     }
-
-    //
-//    private void updateStatusBar() {
-//
-//        int color = 0;
-//        if (mPhotoView != null && mTopInset != 0 && mScrollY > 0) {
-//
-//            // fraction of status bar scrolling capacity
-//            float f = progress(mScrollY,
-//                    mStatusBarFullOpacityBottom - mTopInset * 3,
-//                    mStatusBarFullOpacityBottom - mTopInset);
-//
-//            // define color as int from framework utility
-//            color = Color.argb((int) (255 * f),
-//                    (int) (Color.red(mMutedColor) * 0.9),
-//                    (int) (Color.green(mMutedColor) * 0.9),
-//                    (int) (Color.blue(mMutedColor) * 0.9));
-//        }
-//
-//        // set color of the status bar and framelayout insets
-//        mStatusBarColorDrawable.setColor(color);
-//        mDrawInsetsFrameLayout.setInsetBackground(mStatusBarColorDrawable);
-//    }
-//
-//    // fraction of total status bar scrolling capacity
-//    static float progress(float v, float min, float max) {
-//        return constrain((v - min) / (max - min), 0, 1);
-//    }
-//
-//    // bound a number between min and max values
-//    static float constrain(float val, float min, float max) {
-//        if (val < min) {
-//            return min;
-//        } else if (val > max) {
-//            return max;
-//        } else {
-//            return val;
-//        }
-//    }
 
     // reformat date string
     private Date parsePublishedDate() {
@@ -231,7 +140,6 @@ public class ArticleDetailFragment extends Fragment implements
         }
     }
 
-
     private void bindViews() {
 
         // check that the root layout is valid
@@ -242,7 +150,6 @@ public class ArticleDetailFragment extends Fragment implements
         // get view references
         TextView titleView = mRootView.findViewById(R.id.article_title);
         TextView bylineView = mRootView.findViewById(R.id.article_byline);
-        bylineView.setMovementMethod(new LinkMovementMethod());
         TextView bodyView = mRootView.findViewById(R.id.article_body);
 
         // custom font for article body
@@ -285,18 +192,16 @@ public class ArticleDetailFragment extends Fragment implements
             ImageLoaderHelper.getInstance(getActivity()).getImageLoader()
                     .get(mCursor.getString(ArticleLoader.Query.PHOTO_URL), new ImageLoader.ImageListener() {
 
+                        // set the image
                         @Override
                         public void onResponse(ImageLoader.ImageContainer imageContainer, boolean b) {
                             Bitmap bitmap = imageContainer.getBitmap();
                             if (bitmap != null) {
-                                Palette p = Palette.generate(bitmap, 12);
-                                mMutedColor = p.getDarkMutedColor(0xFF333333);
                                 mPhotoView.setImageBitmap(imageContainer.getBitmap());
-                                mRootView.findViewById(R.id.meta_bar).setBackgroundColor(mMutedColor);
-//                                updateStatusBar();
                             }
                         }
 
+                        // do nothing
                         @Override
                         public void onErrorResponse(VolleyError volleyError) {}
                     });
@@ -345,17 +250,5 @@ public class ArticleDetailFragment extends Fragment implements
     public void onLoaderReset(Loader<Cursor> cursorLoader) {
         mCursor = null;
         bindViews();
-    }
-
-    // return bottom position of up button
-    public int getUpButtonFloor() {
-        if (mPhotoContainerView == null || mPhotoView.getHeight() == 0) {
-            return Integer.MAX_VALUE;
-        }
-
-        // account for parallax
-        return mIsCard
-                ? (int) mPhotoContainerView.getTranslationY() + mPhotoView.getHeight() - mScrollY
-                : mPhotoView.getHeight() - mScrollY;
     }
 }

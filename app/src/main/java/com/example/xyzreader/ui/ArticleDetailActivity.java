@@ -6,15 +6,11 @@ import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowInsets;
 
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
@@ -28,13 +24,8 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
     // member variables
     private Cursor mCursor;
     private long mStartId;
-    private long mSelectedItemId;
-    private int mSelectedItemUpButtonFloor = Integer.MAX_VALUE;
-    private int mTopInset;
     private ViewPager mPager;
     private DetailPagerAdapter mPagerAdapter;
-    private View mUpButtonContainer;
-    private View mUpButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,34 +36,11 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
 
         // get reference to children views
         mPager = findViewById(R.id.pager);
-//        mUpButton = findViewById(R.id.action_up);
-//        mUpButtonContainer = findViewById(R.id.up_container);
 
-        // for SDK > Lollipop
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//
-//            // expand layout to full screen
-//            getWindow().getDecorView().setSystemUiVisibility(
-//                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-//
-//            // customize the position of the up button
-//            mUpButtonContainer.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
-//                @Override
-//                public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-//
-//                    // superclass
-//                    view.onApplyWindowInsets(windowInsets);
-//
-//                    // get the top position of the window and set the up button to it
-//                    mTopInset = windowInsets.getSystemWindowInsetTop();
-//                    mUpButtonContainer.setTranslationY(mTopInset);
-//                    updateUpButtonPosition();
-//                    return windowInsets;
-//                }
-//            });
-//        }
-
-        // instantiate a loader
+        // initialize an ArticleLoader
+        // leave depreciated getSupportLoaderManager as it is integral to the app's function and the
+        // purpose of this exercise is implementing Google Material Design Principles, not refactoring Loaders
+        //noinspection deprecation:
         getSupportLoaderManager().initLoader(0, null, this);
 
         // create a custom adapter and associate it to the viewpager
@@ -80,9 +48,9 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         mPager.setAdapter(mPagerAdapter);
 
         // convert margin from dp to raw px and set it on the viewpager
-        // TODO make zero?
+        // TODO make zero permanent?
         int marginBetweenPagesPx = (int) TypedValue.applyDimension(
-                TypedValue.COMPLEX_UNIT_DIP, 1, getResources().getDisplayMetrics());
+                TypedValue.COMPLEX_UNIT_DIP, 0, getResources().getDisplayMetrics());
         mPager.setPageMargin(marginBetweenPagesPx);
 
         // set color of the page margin
@@ -91,15 +59,11 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         // TODO this is all messed, not clear there are even pages!
         mPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
 
-            // animate up button
             @Override
             public void onPageScrollStateChanged(int state) {
                 super.onPageScrollStateChanged(state);
 
-                // TODO fix this animation, currently produces a fade, make it spin
-//                mUpButton.animate()
-//                        .alpha((state == ViewPager.SCROLL_STATE_IDLE) ? 1f : 0f)
-//                        .setDuration(300);
+                // TODO animate?
             }
 
             // move cursor
@@ -108,13 +72,9 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
                 if (mCursor != null) {
                     mCursor.moveToPosition(position);
                 }
-                mSelectedItemId = mCursor.getLong(ArticleLoader.Query._ID);
-//                updateUpButtonPosition();
+
             }
         });
-
-        // normal up button behavior
-//        mUpButton.setOnClickListener((View view) -> onSupportNavigateUp());
 
         // no saved state bundle the first time activity is run
         if (savedInstanceState == null) {
@@ -124,7 +84,7 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
 
                 // save the selected article to member variables
                 mStartId = ItemsContract.Items.getItemId(getIntent().getData());
-                mSelectedItemId = mStartId;
+
             }
         }
     }
@@ -134,7 +94,6 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
         return ArticleLoader.newAllArticlesInstance(this);
     }
-
 
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
@@ -169,39 +128,12 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         mPagerAdapter.notifyDataSetChanged();
     }
 
-    // callback from the ActivityDetailFragment
-//    public void onUpButtonFloorChanged(long itemId, ArticleDetailFragment fragment) {
-//
-//        // update the up button position
-//        if (itemId == mSelectedItemId) {
-//            mSelectedItemUpButtonFloor = fragment.getUpButtonFloor();
-//            updateUpButtonPosition();
-//        }
-//    }
-
-    // move the up button to correct position in top left
-//    private void updateUpButtonPosition() {
-//        int upButtonNormalBottom = mTopInset + mUpButton.getHeight();
-//        mUpButton.setTranslationY(Math.min(mSelectedItemUpButtonFloor - upButtonNormalBottom, 0));
-//    }
-
     // simple adapter for viewpager
     private class DetailPagerAdapter extends FragmentStatePagerAdapter {
 
         // constructor calls superclass
         public DetailPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
-        }
-
-        // move up button to correct location
-        @Override
-        public void setPrimaryItem(ViewGroup container, int position, Object object) {
-            super.setPrimaryItem(container, position, object);
-            ArticleDetailFragment fragment = (ArticleDetailFragment) object;
-            if (fragment != null) {
-//                mSelectedItemUpButtonFloor = fragment.getUpButtonFloor();
-//                updateUpButtonPosition();
-            }
         }
 
         // get new article detail fragment

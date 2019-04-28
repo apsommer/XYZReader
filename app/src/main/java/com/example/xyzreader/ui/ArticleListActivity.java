@@ -2,12 +2,10 @@ package com.example.xyzreader.ui;
 
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -86,6 +84,9 @@ public class ArticleListActivity extends AppCompatActivity
         mRecyclerView = findViewById(R.id.recycler_view);
 
         // initialize an ArticleLoader
+        // leave depreciated getSupportLoaderManager as it is integral to the app's function and the
+        // purpose of this exercise is implementing Google Material Design Principles, not refactoring Loaders
+        //noinspection deprecation:
         getSupportLoaderManager().initLoader(0, null, this);
 
         // if needed, update the UI via the service
@@ -135,9 +136,6 @@ public class ArticleListActivity extends AppCompatActivity
         int columnCount = getResources().getInteger(R.integer.list_column_count);
         StaggeredGridLayoutManager layoutManager =
                 new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
-
-        // GridLayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), columnCount);
-
         mRecyclerView.setLayoutManager(layoutManager);
     }
 

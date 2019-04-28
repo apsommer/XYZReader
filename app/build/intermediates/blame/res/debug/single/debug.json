@@ -1524,10 +1524,6 @@
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\color\\abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\layout_new_fragment.xml.flat",
-        "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\layout\\new_fragment.xml"
-    },
-    {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_light.9.png"
     },

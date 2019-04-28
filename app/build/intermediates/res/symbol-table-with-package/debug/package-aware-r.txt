@@ -274,7 +274,6 @@ attr iconifiedByDefault
 attr imageButtonStyle
 attr indeterminateProgressStyle
 attr initialActivityCount
-attr insetBackground
 attr insetForeground
 attr isLightTheme
 attr itemBackground
@@ -1030,7 +1029,6 @@ id alertTitle
 id all
 id always
 id app_bar_layout
-id appbar
 id article_body
 id article_byline
 id article_subtitle
@@ -1065,8 +1063,8 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id detail_coordinator
+id detail_main_content
 id disableHome
-id draw_insets_frame_layout
 id edit_query
 id end
 id end_padder
@@ -1099,7 +1097,6 @@ id line1
 id line3
 id listMode
 id list_item
-id main_content
 id masked
 id media_actions
 id message
@@ -1122,7 +1119,6 @@ id parallax
 id parentPanel
 id parent_matrix
 id photo
-id photo_container
 id pin
 id progress_circular
 id progress_horizontal
@@ -1176,7 +1172,6 @@ id submenuarrow
 id submit_area
 id swipe_refresh_layout
 id tabMode
-id tabs
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
@@ -1279,7 +1274,6 @@ layout fragment_detail_material_design
 layout list_item_material_design
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
-layout new_fragment
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -1896,7 +1890,6 @@ styleable CompoundButton android_button buttonTint buttonTintMode
 styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable DesignTheme bottomSheetDialogTheme bottomSheetStyle
-styleable DrawInsetsFrameLayout insetBackground
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
 styleable FloatingActionButton backgroundTint backgroundTintMode borderWidth elevation fabCustomSize fabSize hideMotionSpec hoveredFocusedTranslationZ maxImageSize pressedTranslationZ rippleColor showMotionSpec useCompatPadding
 styleable FloatingActionButton_Behavior_Layout behavior_autoHide
