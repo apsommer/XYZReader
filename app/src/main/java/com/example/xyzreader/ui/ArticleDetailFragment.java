@@ -153,7 +153,7 @@ public class ArticleDetailFragment extends Fragment implements
         TextView bodyView = mRootView.findViewById(R.id.article_body);
 
         // custom font for article body
-        bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "Rosario-Regular.ttf"));
+        bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "font/rosario.ttf"));
 
         if (mCursor != null) {
 

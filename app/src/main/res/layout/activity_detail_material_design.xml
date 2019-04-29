@@ -19,7 +19,8 @@
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/detail_app_bar_height"
-        android:background="@color/primary_500" >
+        android:background="@color/primary_500"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed" >
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar_layout"
@@ -28,7 +29,7 @@
             app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
             app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
             app:expandedTitleMarginStart="72dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed" >
+             >
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -52,14 +53,18 @@
 
             <android.support.design.widget.TabLayout
                 android:id="@+id/tabs"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/primary_500"
+                android:layout_gravity="bottom|center_horizontal"
+
+                app:tabGravity="center"
                 app:tabMode="scrollable"
-                android:layout_gravity="bottom"
-                style="@style/TabStyle"
-                app:tabPaddingStart="0dp"
-                app:tabPaddingEnd="0dp"
-                android:background="@color/primary_light_200" />
+                app:tabIndicatorFullWidth="true"
+                app:tabMaxWidth="50dp"
+                app:tabIndicatorColor="@color/accent_A200"
+
+                />
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>

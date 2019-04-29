@@ -1,5 +1,6 @@
 package com.example.xyzreader.ui;
 
+import android.content.Context;
 import android.graphics.Typeface;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -32,117 +33,50 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
     private long mStartId;
     private ViewPager mPager;
     private DetailPagerAdapter mPagerAdapter;
+    private TabLayout mTabLayout;
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         // inflate the detail layout
         setContentView(R.layout.activity_detail_material_design);
 
+        // get reference to activity context
+        mContext = this;
+
         // get reference to children views
         mPager = findViewById(R.id.pager);
+        mTabLayout = findViewById(R.id.tabs);
 
-        // initialize an ArticleLoader
         // leave depreciated getSupportLoaderManager as it is integral to the app's function and the
-        // purpose of this exercise is implementing Google Material Design Principles, not refactoring Loaders
-        //noinspection deprecation:
+        // purpose of this exercise is implementing Google Material Design principles, not refactoring
+        // Loaders to the ModelView / LiveData pattern
+        // noinspection deprecation:
         getSupportLoaderManager().initLoader(0, null, this);
 
-        // create a custom adapter and associate it to the viewpager
+        // associate the adapter and tabs to the viewpager
         mPagerAdapter = new DetailPagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
-
-        // get reference to tablayout
-        TabLayout tabLayout = findViewById(R.id.tabs);
-
-        // associate the tablayout with the viewpager
-        // updates the tablayout on viewpager swipe, and on arbitrary selected tab
-        // tab names set with fragment adapter's onPageTitle()
-        tabLayout.setupWithViewPager(mPager);
-
-        // iterate through the tabs to set the custom view
-        for (int i = 0; i < tabLayout.getTabCount(); i++) {
-
-            // get reference to current tab
-            TabLayout.Tab tab = tabLayout.getTabAt(i);
-
-            // getTabView() is custom method in fragment adapter that returns inflated TextView
-            tab.setCustomView(mPagerAdapter.getTabView(i));
-        }
-
-        // format the first tab to ensure correct formatting on app start
-//        TabLayout.Tab tab = tabLayout.getTabAt(0);
-//        TextView textView = (TextView) tab.getCustomView(); // setCustomView executed in previous
-//        textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
-//        textView.setTypeface(custom_font, Typeface.BOLD);
-
-        // tab click listener
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-
-            // selected tab is black color and bold style
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                TextView textView = (TextView) tab.getCustomView();
-//                textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
-//                textView.setTypeface(custom_font, Typeface.BOLD);
-            }
-
-            // unselected tab is gray color and normal style
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-                TextView textView = (TextView) tab.getCustomView();
-//                textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.gray));
-//                textView.setTypeface(custom_font, Typeface.NORMAL);
-            }
-
-            // do nothing, same as selected state
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {}
-
-        });
-
-
-
-        // convert margin from dp to raw px and set it on the viewpager
-        // TODO make zero permanent?
-        int marginBetweenPagesPx = (int) TypedValue.applyDimension(
-                TypedValue.COMPLEX_UNIT_DIP, 0, getResources().getDisplayMetrics());
-        mPager.setPageMargin(marginBetweenPagesPx);
 
         // set color of the page margin
         mPager.setPageMarginDrawable(new ColorDrawable(0x22000000));
 
-        // TODO this is all messed, not clear there are even pages!
+        // move cursor when page is changed
         mPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-                super.onPageScrollStateChanged(state);
-
-                // TODO animate?
-            }
-
-            // move cursor
             @Override
             public void onPageSelected(int position) {
                 if (mCursor != null) {
                     mCursor.moveToPosition(position);
                 }
-
             }
         });
 
-        // no saved state bundle the first time activity is run
-        if (savedInstanceState == null) {
-
-            // check the intent exists and has data in it
-            if (getIntent() != null && getIntent().getData() != null) {
-
-                // save the selected article to member variables
-                mStartId = ItemsContract.Items.getItemId(getIntent().getData());
-
-            }
+        // get the article ID the first time activity is run
+        if (savedInstanceState == null && getIntent() != null && getIntent().getData() != null) {
+            mStartId = ItemsContract.Items.getItemId(getIntent().getData());
         }
     }
 
@@ -176,6 +110,9 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
             }
             mStartId = 0;
         }
+
+        // setup custom tabs in toolbar
+        setupTabs();
     }
 
     // remove all data from cursor and UI
@@ -183,6 +120,49 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
     public void onLoaderReset(Loader<Cursor> cursorLoader) {
         mCursor = null;
         mPagerAdapter.notifyDataSetChanged();
+    }
+
+    private void setupTabs() {
+        mTabLayout.setupWithViewPager(mPager);
+
+        // iterate through tabs setting custom view on each
+        for (int i = 0; i < mTabLayout.getTabCount(); i++) {
+            TabLayout.Tab tab = mTabLayout.getTabAt(i);
+            tab.setCustomView(mPagerAdapter.getTabView(i));
+        }
+
+        // when the activity starts the first tab has to be formatted manually as state "selected"
+        TabLayout.Tab tab = mTabLayout.getTabAt(mCursor.getPosition());
+        TextView textView = (TextView) tab.getCustomView();
+        textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.accent_A200));
+        textView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 22);
+
+        // tab click listener
+        mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
+            // selected tab is black color and bold style
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                TextView textView = (TextView) tab.getCustomView();
+                textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.accent_A200));
+                textView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+                textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 22);
+            }
+
+            // unselected tab is gray color and normal style
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                TextView textView = (TextView) tab.getCustomView();
+                textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+                textView.setTypeface(Typeface.DEFAULT, Typeface.NORMAL);
+                textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
+            }
+
+            // do nothing, same as selected state
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {}
+        });
     }
 
     // simple adapter for viewpager
@@ -211,7 +191,12 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         @Override
         public CharSequence getPageTitle(int position) {
 
-            // TODO use article titles
+            // TODO use article titles for tablet
+//            mCursor.moveToPosition(position);
+//            String author = mCursor.getString(ArticleLoader.Query.AUTHOR);
+//            return String.valueOf(author);
+
+
             return String.valueOf(position);
         }
 
@@ -219,14 +204,11 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         public View getTabView(int position) {
 
             // root view is the single TextView
-            View tabView = LayoutInflater.from(getBaseContext()).inflate(R.layout.custom_tab, null);
+            View tabView = LayoutInflater.from(mContext).inflate(R.layout.tab_detail_activity, null);
             TextView textView = tabView.findViewById(R.id.tabTextView);
 
             // set the tab text, font, and capitalization
             textView.setText(getPageTitle(position));
-            //Typeface custom_font = Typeface.createFromAsset(mContext.getAssets(), "font/adamina.ttf");
-            //textView.setTypeface(custom_font);
-            textView.setAllCaps(true);
 
             return tabView;
         }

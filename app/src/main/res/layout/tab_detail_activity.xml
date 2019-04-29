@@ -5,11 +5,10 @@
     android:id="@+id/tabTextView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
     android:gravity="center"
-    tools:text="Tab label"
-    android:textSize="22sp"
-    android:textColor="@android:color/black"
-    android:textAllCaps="true" >
+    android:textSize="16sp"
+    android:textColor="@color/white"
+    android:textAllCaps="false"
+    tools:text="Edgar Allen Poe" >
 
 </TextView>
