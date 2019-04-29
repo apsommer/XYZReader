@@ -16,7 +16,8 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop" />
 
-        <ScrollView
+        <!-- toolbar will not collapse with regular ScrollView -->
+        <android.support.v4.widget.NestedScrollView
             android:id="@+id/scrollview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -81,7 +82,7 @@
                     android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier" />
 
             </LinearLayout>
-        </ScrollView>
+        </android.support.v4.widget.NestedScrollView>
     </FrameLayout>
 
     <android.support.design.widget.FloatingActionButton

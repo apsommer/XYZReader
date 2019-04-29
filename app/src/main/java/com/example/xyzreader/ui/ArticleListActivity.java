@@ -43,7 +43,7 @@ public class ArticleListActivity extends AppCompatActivity
 
     // member variables
     private static final String TAG = ArticleListActivity.class.toString();
-    private SwipeRefreshLayout mSwipeRefreshLayout;
+    //private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
 
     // use default locale date formats
@@ -67,7 +67,9 @@ public class ArticleListActivity extends AppCompatActivity
 
                 // update flag and refresh UI
                 mIsRefreshing = intent.getBooleanExtra(UpdaterService.EXTRA_REFRESHING, false);
-                mSwipeRefreshLayout.setRefreshing(mIsRefreshing);
+
+                // TODO refresh using overflow
+                //mSwipeRefreshLayout.setRefreshing(mIsRefreshing);
             }
         }
     };
@@ -80,7 +82,7 @@ public class ArticleListActivity extends AppCompatActivity
         setContentView(R.layout.activity_list_material_design);
 
         // get view references
-        mSwipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
+        //mSwipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         mRecyclerView = findViewById(R.id.recycler_view);
 
         // initialize an ArticleLoader

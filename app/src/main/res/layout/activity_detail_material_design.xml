@@ -1,17 +1,17 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/detail_coordinator"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <!-- pager -->
+    <!-- pager is filled with ArticleDetailFragments -->
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:clipToPadding="false"
         android:scrollbarStyle="outsideOverlay"
+
         android:background="@color/primary_light_200"
         />
 
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/detail_app_bar_height"
         android:background="@color/primary_500"
-        app:layout_scrollFlags="scroll|exitUntilCollapsed" >
+        >
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar_layout"
@@ -29,6 +29,7 @@
             app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
             app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
             app:expandedTitleMarginStart="72dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
              >
 
             <android.support.v7.widget.Toolbar
@@ -39,8 +40,11 @@
                 android:layout_gravity="bottom"
                 android:layout_marginLeft="@dimen/list_toolbar_side_margin"
                 android:layout_marginRight="@dimen/list_toolbar_side_margin"
+
                 app:contentInsetStart="0dp"
-                app:layout_collapseMode="pin" />
+                app:layout_collapseMode="pin"
+
+                />
 
             <ImageView
                 android:layout_marginLeft="@dimen/list_side_margin"
@@ -49,7 +53,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/logo"
-                android:contentDescription="@string/app_name" />
+                android:contentDescription="@string/app_name"
+
+                />
 
             <android.support.design.widget.TabLayout
                 android:id="@+id/tabs"
