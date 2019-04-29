@@ -28,5 +28,6 @@
     <color name="white">#FFFFFF</color>
     <color name="light_gray">#C0C0C0</color>
     <color name="photo_placeholder">#2DB3B3B3</color>
+    <color name="transparent">#00FFFFFF</color>
 
 </resources>

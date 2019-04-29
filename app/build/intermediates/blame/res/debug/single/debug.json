@@ -8,6 +8,10 @@
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\color\\abc_tint_default.xml"
     },
     {
+        "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_refresh.png.flat",
+        "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\drawable-hdpi\\refresh.png"
+    },
+    {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
@@ -236,6 +240,10 @@
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\layout\\select_dialog_item_material.xml"
     },
     {
+        "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21_rotate_refresh.xml.flat",
+        "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\anim-v21\\rotate_refresh.xml"
+    },
+    {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
@@ -334,6 +342,10 @@
     {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\drawable-mdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_refresh.png.flat",
+        "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\drawable-mdpi\\refresh.png"
     },
     {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -688,6 +700,10 @@
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
+        "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_refresh.png.flat",
+        "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\drawable-xxxhdpi\\refresh.png"
+    },
+    {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_16dp.png"
     },
@@ -886,6 +902,10 @@
     {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_activity_list.xml.flat",
+        "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\menu\\menu_activity_list.xml"
     },
     {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable_photo_background_protection.xml.flat",
@@ -1232,6 +1252,10 @@
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\7674ce4d9ce9645527b705703ad81999\\res\\color\\mtrl_btn_text_btn_ripple_color.xml"
     },
     {
+        "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_refresh.png.flat",
+        "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\drawable-xhdpi\\refresh.png"
+    },
+    {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_icon_group.xml.flat",
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b1736b756c7e540021995f16b01b58b2\\res\\layout-v21\\notification_template_icon_group.xml"
     },
@@ -1404,6 +1428,10 @@
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
+        "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_refresh.png.flat",
+        "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\drawable-xxhdpi\\refresh.png"
+    },
+    {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_alert_dialog_button_bar_material.xml.flat",
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
@@ -1502,10 +1530,6 @@
     {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mtrl_snackbar_background.xml.flat",
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\7674ce4d9ce9645527b705703ad81999\\res\\drawable\\mtrl_snackbar_background.xml"
-    },
-    {
-        "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\menu_main.xml.flat",
-        "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\menu\\main.xml"
     },
     {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_btn_colored_text_material.xml.flat",
@@ -1834,6 +1858,10 @@
     {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_refresh.xml.flat",
+        "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\drawable-anydpi\\ic_refresh.xml"
     },
     {
         "merged": "C:\\Android\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",

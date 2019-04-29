@@ -26,3 +26,9 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+task adbreset(type: Exec) {
+
+    def terminalCommand = ['adb', 'kill-server', 'adb', 'start-server']
+    commandLine terminalCommand
+}

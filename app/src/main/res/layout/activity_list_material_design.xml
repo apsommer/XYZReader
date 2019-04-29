@@ -40,7 +40,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed" >
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbar_list"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
@@ -51,6 +51,7 @@
                 app:contentInsetStart="0dp"
                 app:layout_collapseMode="pin" />
 
+            <!-- logo -->
             <ImageView
                 android:layout_marginLeft="@dimen/list_side_margin"
                 android:layout_marginRight="@dimen/list_side_margin"
@@ -59,6 +60,20 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/logo"
                 android:contentDescription="@string/app_name" />
+
+            <!-- refresh button -->
+            <ImageButton
+                android:id="@+id/refresh_main"
+                android:layout_gravity="top|end"
+                android:padding="4dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/refresh"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginEnd="@dimen/list_side_margin"
+                android:layout_marginTop="8dp"
+                />
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>

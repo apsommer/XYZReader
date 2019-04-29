@@ -16,8 +16,13 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -45,6 +50,7 @@ public class ArticleListActivity extends AppCompatActivity
     private static final String TAG = ArticleListActivity.class.toString();
     //private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
+    private Context mContext;
 
     // use default locale date formats
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss", Locale.US);
@@ -81,9 +87,26 @@ public class ArticleListActivity extends AppCompatActivity
         // inflate layout
         setContentView(R.layout.activity_list_material_design);
 
+        mContext = this;
+
         // get view references
         //mSwipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         mRecyclerView = findViewById(R.id.recycler_view);
+
+        // TODO finish
+        setSupportActionBar(findViewById(R.id.toolbar_list));
+
+        ImageButton refreshButton = findViewById(R.id.refresh_main);
+
+        refreshButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Animation rotation = AnimationUtils.loadAnimation(mContext, R.anim.rotate_refresh);
+                rotation.setRepeatCount(Animation.INFINITE);
+                refreshButton.startAnimation(rotation);
+            }
+        });
+
 
         // initialize an ArticleLoader
         // leave depreciated getSupportLoaderManager as it is integral to the app's function and the
@@ -114,6 +137,27 @@ public class ArticleListActivity extends AppCompatActivity
         super.onStop();
         unregisterReceiver(mRefreshingReceiver);
     }
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_activity_list, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//
+//        switch (item.getItemId()) {
+//
+//            case R.id.refresh:
+//
+//                // TODO refresh loader
+//                return true;
+//
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//    }
 
     // returns an ArticleLoader that pulls from the local persistent database
     @Override
