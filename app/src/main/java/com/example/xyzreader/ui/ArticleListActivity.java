@@ -37,31 +37,27 @@ import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.ItemsContract;
 import com.example.xyzreader.data.UpdaterService;
 
-/**
- * An activity representing a list of Articles. This activity has different presentations for
- * handset and tablet-size devices. On handsets, the activity presents a list of items, which when
- * touched, lead to a {@link ArticleDetailActivity} representing item details. On tablets, the
- * activity presents a grid of items as cards.
- */
+// Loaders are depreciates as of API 28. Leave them in this app as they are integral to its function
+// and the purpose of this exercise is to implement Google Material Design principles, not to
+// refactor Loaders to the ViewModel / LiveData pattern.
+@SuppressWarnings("deprecation")
 public class ArticleListActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<Cursor> {
 
     // member variables
     private static final String TAG = ArticleListActivity.class.toString();
-    //private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
     private Context mContext;
-
-    // use default locale date formats
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss", Locale.US);
-    private DateFormat outputFormat = DateFormat.getDateInstance();
-
-    // most time functions can only handle years 1902 - 2037
-    private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2,1,1);
-
-    // track the status of the UI "refreshing"
+    private ImageButton mRefreshButton;
+    private Animation mRotation;
     private boolean mIsRefreshing;
 
+    // use default locale date formats, most time functions can only handle years 1902 - 2037
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss", Locale.US);
+    private DateFormat outputFormat = DateFormat.getDateInstance();
+    private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2,1,1);
+
+    // TODO possibly remove or simplify
     // a broadcast receiver updates the UI if necessary
     private BroadcastReceiver mRefreshingReceiver = new BroadcastReceiver() {
 
@@ -73,52 +69,51 @@ public class ArticleListActivity extends AppCompatActivity
 
                 // update flag and refresh UI
                 mIsRefreshing = intent.getBooleanExtra(UpdaterService.EXTRA_REFRESHING, false);
-
-                // TODO refresh using overflow
-                //mSwipeRefreshLayout.setRefreshing(mIsRefreshing);
             }
         }
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
         // inflate layout
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_material_design);
 
+        // set member references
         mContext = this;
 
         // get view references
-        //mSwipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         mRecyclerView = findViewById(R.id.recycler_view);
+        mRefreshButton = findViewById(R.id.refresh_main);
 
-        // TODO finish
+        // TODO finish (if needed)
         setSupportActionBar(findViewById(R.id.toolbar_list));
 
-        ImageButton refreshButton = findViewById(R.id.refresh_main);
+        // set a rotating animation on the refresh button
+        mRotation = AnimationUtils.loadAnimation(mContext, R.anim.rotate_refresh);
+        mRotation.setRepeatCount(Animation.INFINITE);
+        mRefreshButton.startAnimation(mRotation);
 
-        refreshButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Animation rotation = AnimationUtils.loadAnimation(mContext, R.anim.rotate_refresh);
-                rotation.setRepeatCount(Animation.INFINITE);
-                refreshButton.startAnimation(rotation);
-            }
+        // clicking the refresh button starts the rotation animation and updates the UI
+        mRefreshButton.setOnClickListener((View view) -> {
+            mRefreshButton.startAnimation(mRotation);
+            startUpdaterService();
         });
 
-
         // initialize an ArticleLoader
-        // leave depreciated getSupportLoaderManager as it is integral to the app's function and the
-        // purpose of this exercise is implementing Google Material Design Principles, not refactoring Loaders
-        //noinspection deprecation:
         getSupportLoaderManager().initLoader(0, null, this);
 
-        // if needed, update the UI via the service
+        // update the UI via the service if the app is starting from a destroyed state
         if (savedInstanceState == null) {
-            Intent intentUpdaterService = new Intent(this, UpdaterService.class);
-            startService(intentUpdaterService);
+            startUpdaterService();
         }
+    }
+
+    // simple helper function starts updater service class
+    private void startUpdaterService() {
+        Intent intentUpdaterService = new Intent(this, UpdaterService.class);
+        startService(intentUpdaterService);
     }
 
     // associate the "state change" key to the receiver and register it
@@ -138,6 +133,7 @@ public class ArticleListActivity extends AppCompatActivity
         unregisterReceiver(mRefreshingReceiver);
     }
 
+    // TODO overflow menu may not be necessary
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        getMenuInflater().inflate(R.menu.menu_activity_list, menu);
@@ -183,6 +179,9 @@ public class ArticleListActivity extends AppCompatActivity
         StaggeredGridLayoutManager layoutManager =
                 new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
+
+        // stop animation
+        mRefreshButton.clearAnimation();
     }
 
     // refresh the UI
@@ -293,8 +292,7 @@ public class ArticleListActivity extends AppCompatActivity
             return mCursor.getCount();
         }
     }
-
-
+    
     // associate the views in the item layout to member variables
     public static class ViewHolder extends RecyclerView.ViewHolder {
 

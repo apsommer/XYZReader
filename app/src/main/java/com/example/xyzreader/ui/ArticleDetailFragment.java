@@ -30,11 +30,10 @@ import java.util.Locale;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 
-/**
- * A fragment representing a single Article detail screen. This fragment is
- * either contained in a {@link ArticleListActivity} in two-pane mode (on
- * tablets) or a {@link ArticleDetailActivity} on handsets.
- */
+// Loaders are depreciates as of API 28. Leave them in this app as they are integral to its function
+// and the purpose of this exercise is to implement Google Material Design principles, not to
+// refactor Loaders to the ViewModel / LiveData pattern.
+@SuppressWarnings("deprecation")
 public class ArticleDetailFragment extends Fragment implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
