@@ -13,19 +13,24 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.ItemsContract;
 
-/**
- * An activity representing a single Article detail screen, letting you swipe between articles.
- */
+// Loaders are depreciates as of API 28. Leave them in this app as they are integral to its function
+// and the purpose of this exercise is to implement Google Material Design principles, not to
+// refactor Loaders to the ViewModel / LiveData pattern.
+@SuppressWarnings("deprecation")
 public class ArticleDetailActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     // member variables
@@ -35,34 +40,49 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
     private DetailPagerAdapter mPagerAdapter;
     private TabLayout mTabLayout;
     private Context mContext;
+    private ImageButton mRefreshButton;
+    private Animation mRotation;
+    private boolean mIsRefreshing;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        // inflate layout
         super.onCreate(savedInstanceState);
-
-        // inflate the detail layout
         setContentView(R.layout.activity_detail_material_design);
 
-        // get reference to activity context
+        // set member references
         mContext = this;
 
-        // get reference to children views
+        // get view references
         mPager = findViewById(R.id.pager);
         mTabLayout = findViewById(R.id.tabs);
+        mRefreshButton = findViewById(R.id.refresh_detail);
 
-        // leave depreciated getSupportLoaderManager as it is integral to the app's function and the
-        // purpose of this exercise is implementing Google Material Design principles, not refactoring
-        // Loaders to the ModelView / LiveData pattern
-        // noinspection deprecation:
+        // clean up action bar
+        setSupportActionBar(findViewById(R.id.toolbar_detail));
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
+
+        // set a rotating animation on the refresh button
+        mRotation = AnimationUtils.loadAnimation(mContext, R.anim.rotate_refresh);
+        mRotation.setRepeatCount(Animation.INFINITE);
+        mRefreshButton.startAnimation(mRotation);
+
+        // clicking the refresh button starts the rotation animation and updates the UI
+        mRefreshButton.setOnClickListener((View view) -> {
+            mRefreshButton.startAnimation(mRotation);
+            // TODO refresh loader
+            getSupportLoaderManager().restartLoader(0, null, this);
+            mRefreshButton.setImageAlpha(0);
+
+        });
+
         getSupportLoaderManager().initLoader(0, null, this);
 
         // associate the adapter and tabs to the viewpager
         mPagerAdapter = new DetailPagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
-
-        // set color of the page margin
-        mPager.setPageMarginDrawable(new ColorDrawable(0x22000000));
 
         // move cursor when page is changed
         mPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
@@ -93,6 +113,8 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         mCursor = cursor;
         mPagerAdapter.notifyDataSetChanged();
 
+        //mCursor.moveToPosition(mPager.getCurrentItem());
+
         // select the start ID
         if (mStartId > 0) {
 
@@ -113,6 +135,9 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
 
         // setup custom tabs in toolbar
         setupTabs();
+
+        // stop animation
+        mRefreshButton.clearAnimation();
     }
 
     // remove all data from cursor and UI
@@ -123,6 +148,7 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
     }
 
     private void setupTabs() {
+
         mTabLayout.setupWithViewPager(mPager);
 
         // iterate through tabs setting custom view on each

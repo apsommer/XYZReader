@@ -721,6 +721,8 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen appbar_height_collapsed
+dimen appbar_height_expanded
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -775,7 +777,6 @@ dimen design_tab_scrollable_min_width
 dimen design_tab_text_size
 dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
-dimen detail_app_bar_height
 dimen detail_body_bottom_margin
 dimen detail_body_text_size
 dimen detail_body_top_margin
@@ -1035,7 +1036,6 @@ id add
 id alertTitle
 id all
 id always
-id app_bar_layout
 id article_body
 id article_byline
 id article_subtitle
@@ -1070,7 +1070,6 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id detail_main_content
-id detail_toolbar
 id disableHome
 id edit_query
 id end
@@ -1132,6 +1131,7 @@ id progress_horizontal
 id radio
 id recycler_view
 id refresh
+id refresh_detail
 id refresh_main
 id right
 id right_icon
@@ -1198,6 +1198,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toolbar_detail
 id toolbar_list
 id top
 id topPanel

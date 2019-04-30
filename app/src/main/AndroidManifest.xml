@@ -21,7 +21,7 @@
         <!-- launch article list -->
         <activity
             android:name=".ui.ArticleListActivity"
-            android:label="@string/app_name"
+            android:label="Article List"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +32,7 @@
         <!-- article details called from article list -->
         <activity
             android:name=".ui.ArticleDetailActivity"
+            android:label="Article Details"
             android:parentActivityName=".ui.ArticleListActivity">
 
             <intent-filter tools:ignore="AppLinkUrlError">

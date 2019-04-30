@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -87,8 +88,10 @@ public class ArticleListActivity extends AppCompatActivity
         mRecyclerView = findViewById(R.id.recycler_view);
         mRefreshButton = findViewById(R.id.refresh_main);
 
-        // TODO finish (if needed)
+        // clean up action bar
         setSupportActionBar(findViewById(R.id.toolbar_list));
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
 
         // set a rotating animation on the refresh button
         mRotation = AnimationUtils.loadAnimation(mContext, R.anim.rotate_refresh);
@@ -292,7 +295,7 @@ public class ArticleListActivity extends AppCompatActivity
             return mCursor.getCount();
         }
     }
-    
+
     // associate the views in the item layout to member variables
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
