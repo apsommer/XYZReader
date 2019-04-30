@@ -70,7 +70,6 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
 
         // set a rotating animation on the refresh button
         mRotation = AnimationUtils.loadAnimation(mContext, R.anim.rotate_refresh);
-        //mRotation.setRepeatCount(Animation.ABSOLUTE);
         mRefreshButton.startAnimation(mRotation);
 
         // clicking the refresh button starts the rotation animation and updates the UI
@@ -143,9 +142,6 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
 
         // setup custom tabs in toolbar
         setupTabs();
-
-        // stop animation
-        mRefreshButton.clearAnimation();
     }
 
     // remove all data from cursor and UI

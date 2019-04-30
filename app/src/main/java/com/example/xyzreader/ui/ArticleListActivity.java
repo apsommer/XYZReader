@@ -58,6 +58,7 @@ public class ArticleListActivity extends AppCompatActivity
     private DateFormat outputFormat = DateFormat.getDateInstance();
     private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2,1,1);
 
+    // TODO this seems unnecessary, not using the refreshing flag
     // a broadcast receiver updates the UI
     private BroadcastReceiver mRefreshingReceiver = new BroadcastReceiver() {
 
@@ -94,7 +95,6 @@ public class ArticleListActivity extends AppCompatActivity
 
         // set a rotating animation on the refresh button
         mRotation = AnimationUtils.loadAnimation(mContext, R.anim.rotate_refresh);
-        mRotation.setRepeatCount(Animation.INFINITE);
         mRefreshButton.startAnimation(mRotation);
 
         // clicking the refresh button starts the rotation animation and updates the UI
@@ -160,8 +160,6 @@ public class ArticleListActivity extends AppCompatActivity
                 new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
 
-        // stop animation
-        mRefreshButton.clearAnimation();
     }
 
     // refresh the UI
