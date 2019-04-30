@@ -229,7 +229,9 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         @Override
         public CharSequence getPageTitle(int position) {
 
-            return String.valueOf(position);
+            // use simple integers for tab titles
+            // add one due to zero based indexing
+            return String.valueOf(position + 1);
         }
 
         // returns an inflated custom tab layout textview
