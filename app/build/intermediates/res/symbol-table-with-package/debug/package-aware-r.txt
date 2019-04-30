@@ -15,7 +15,6 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
-anim fab_state_list_anim
 anim rotate_refresh
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
@@ -966,7 +965,6 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
-drawable add_fab_background
 drawable avd_hide_password
 drawable avd_show_password
 drawable design_bottom_navigation_item_background
@@ -998,12 +996,9 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-drawable padded_divider
-drawable photo_background_protection
 drawable refresh
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
-drawable white_selectable_item_background_circle
 font rosario
 fraction detail_body_line_spacing_multiplier
 id ALT
@@ -1130,7 +1125,6 @@ id progress_circular
 id progress_horizontal
 id radio
 id recycler_view
-id refresh
 id refresh_detail
 id refresh_main
 id right
@@ -1304,7 +1298,6 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout tab_detail_activity
-menu menu_activity_list
 mipmap ic_launcher
 string abc_action_bar_home_description
 string abc_action_bar_up_description

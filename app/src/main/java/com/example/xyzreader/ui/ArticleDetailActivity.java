@@ -1,5 +1,6 @@
 package com.example.xyzreader.ui;
 
+import android.content.ContentProvider;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.support.design.widget.TabLayout;
@@ -15,6 +16,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +28,7 @@ import android.widget.TextView;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.ItemsContract;
+import com.example.xyzreader.data.ItemsProvider;
 
 // Loaders are depreciates as of API 28. Leave them in this app as they are integral to its function
 // and the purpose of this exercise is to implement Google Material Design principles, not to
@@ -43,6 +46,7 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
     private ImageButton mRefreshButton;
     private Animation mRotation;
     private boolean mIsRefreshing;
+    private int mPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,15 +70,16 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
 
         // set a rotating animation on the refresh button
         mRotation = AnimationUtils.loadAnimation(mContext, R.anim.rotate_refresh);
-        mRotation.setRepeatCount(Animation.INFINITE);
+        //mRotation.setRepeatCount(Animation.ABSOLUTE);
         mRefreshButton.startAnimation(mRotation);
 
         // clicking the refresh button starts the rotation animation and updates the UI
         mRefreshButton.setOnClickListener((View view) -> {
+
             mRefreshButton.startAnimation(mRotation);
-            // TODO refresh loader
-            getSupportLoaderManager().restartLoader(0, null, this);
-            mRefreshButton.setImageAlpha(0);
+
+            // even though nothing has changed in the database, refresh from it anyway
+            getContentResolver().notifyChange(ItemsContract.Items.buildDirUri(), null);
 
         });
 
@@ -90,6 +95,7 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
             public void onPageSelected(int position) {
                 if (mCursor != null) {
                     mCursor.moveToPosition(position);
+                    mPosition = position;
                 }
             }
         });
@@ -113,23 +119,25 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         mCursor = cursor;
         mPagerAdapter.notifyDataSetChanged();
 
-        //mCursor.moveToPosition(mPager.getCurrentItem());
-
-        // select the start ID
+        // article ID is always > 0
         if (mStartId > 0) {
 
-            // move to first row
+            // move to the first row and iterate through cursor
             mCursor.moveToFirst();
-
-            // TODO: optimize ... why loop at all just set to zero?
             while (!mCursor.isAfterLast()) {
+
+                // current page ID matches article ID
                 if (mCursor.getLong(ArticleLoader.Query._ID) == mStartId) {
-                    final int position = mCursor.getPosition();
-                    mPager.setCurrentItem(position, false);
+
+                    // record position and set pager to this item
+                    mPosition = mCursor.getPosition();
+                    mPager.setCurrentItem(mPosition, false);
                     break;
                 }
                 mCursor.moveToNext();
             }
+
+            // only need to perform this search first time through coming from ArticleDetailActivity
             mStartId = 0;
         }
 
@@ -158,7 +166,7 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         }
 
         // when the activity starts the first tab has to be formatted manually as state "selected"
-        TabLayout.Tab tab = mTabLayout.getTabAt(mCursor.getPosition());
+        TabLayout.Tab tab = mTabLayout.getTabAt(mPosition);
         TextView textView = (TextView) tab.getCustomView();
         textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.accent_A200));
         textView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
@@ -167,22 +175,30 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         // tab click listener
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 
-            // selected tab is black color and bold style
+            // selected tab is accent color and bold
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+
                 TextView textView = (TextView) tab.getCustomView();
-                textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.accent_A200));
-                textView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-                textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 22);
+
+                if (textView != null) {
+                    textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.accent_A200));
+                    textView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+                    textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 22);
+                }
             }
 
-            // unselected tab is gray color and normal style
+            // unselected tab is white with normal style
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
+
                 TextView textView = (TextView) tab.getCustomView();
-                textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
-                textView.setTypeface(Typeface.DEFAULT, Typeface.NORMAL);
-                textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
+
+                if (textView != null) {
+                    textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+                    textView.setTypeface(Typeface.DEFAULT, Typeface.NORMAL);
+                    textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
+                }
             }
 
             // do nothing, same as selected state
@@ -216,12 +232,6 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         // supplies labels for tablayout, called by viewpager
         @Override
         public CharSequence getPageTitle(int position) {
-
-            // TODO use article titles for tablet
-//            mCursor.moveToPosition(position);
-//            String author = mCursor.getString(ArticleLoader.Query.AUTHOR);
-//            return String.valueOf(author);
-
 
             return String.valueOf(position);
         }

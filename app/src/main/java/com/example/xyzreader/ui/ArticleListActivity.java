@@ -58,8 +58,7 @@ public class ArticleListActivity extends AppCompatActivity
     private DateFormat outputFormat = DateFormat.getDateInstance();
     private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2,1,1);
 
-    // TODO possibly remove or simplify
-    // a broadcast receiver updates the UI if necessary
+    // a broadcast receiver updates the UI
     private BroadcastReceiver mRefreshingReceiver = new BroadcastReceiver() {
 
         @Override
@@ -135,28 +134,6 @@ public class ArticleListActivity extends AppCompatActivity
         super.onStop();
         unregisterReceiver(mRefreshingReceiver);
     }
-
-    // TODO overflow menu may not be necessary
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.menu_activity_list, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//
-//        switch (item.getItemId()) {
-//
-//            case R.id.refresh:
-//
-//                // TODO refresh loader
-//                return true;
-//
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
 
     // returns an ArticleLoader that pulls from the local persistent database
     @Override
