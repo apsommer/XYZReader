@@ -18,10 +18,11 @@ public class Config {
         URL url = null;
         try {
 
-            //url = new URL("https://go.udacity.com/xyz-reader-json" );
+            //alternate url https://go.udacity.com/xyz-reader-json
             url = new URL("https://raw.githubusercontent.com/SuperAwesomeness/XYZReader/master/data.json" );
         } catch (MalformedURLException ignored) {
-            // TODO: throw a real error
+
+            // log an error is sufficient for this example app
             Log.e(TAG, "Please check your internet connection.");
         }
 

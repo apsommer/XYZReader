@@ -1,5 +1,7 @@
 package com.example.xyzreader.ui;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.content.BroadcastReceiver;
@@ -55,22 +57,6 @@ public class ArticleListActivity extends AppCompatActivity
     private DateFormat outputFormat = DateFormat.getDateInstance();
     private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2,1,1);
 
-    // TODO this seems unnecessary, not using the refreshing flag
-    // a broadcast receiver updates the UI
-    private BroadcastReceiver mRefreshingReceiver = new BroadcastReceiver() {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-
-            // double check the broadcast has the "state change" key
-            if (UpdaterService.BROADCAST_ACTION_STATE_CHANGE.equals(intent.getAction())) {
-
-                // update flag and refresh UI
-                mIsRefreshing = intent.getBooleanExtra(UpdaterService.EXTRA_REFRESHING, false);
-            }
-        }
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -113,23 +99,6 @@ public class ArticleListActivity extends AppCompatActivity
     private void startUpdaterService() {
         Intent intentUpdaterService = new Intent(this, UpdaterService.class);
         startService(intentUpdaterService);
-    }
-
-    // associate the "state change" key to the receiver and register it
-    @Override
-    protected void onStart() {
-        super.onStart();
-        IntentFilter intentFilterStateChange = new IntentFilter(UpdaterService.BROADCAST_ACTION_STATE_CHANGE);
-
-        // results in system broadcast and system call to UpdaterService onHandleIntent()
-        registerReceiver(mRefreshingReceiver, intentFilterStateChange);
-    }
-
-    // unregister the receiver
-    @Override
-    protected void onStop() {
-        super.onStop();
-        unregisterReceiver(mRefreshingReceiver);
     }
 
     // returns an ArticleLoader that pulls from the local persistent database
@@ -194,19 +163,17 @@ public class ArticleListActivity extends AppCompatActivity
             // create a new viewholder
             final ViewHolder viewHolder = new ViewHolder(view);
 
-            // set a click listener on the item layout that TODO ...
-            view.setOnClickListener(new View.OnClickListener() {
+            // set a click listener on the item layout that starts the ArticleDetailActivity
+            view.setOnClickListener((View clickedView) -> {
 
-                @Override
-                public void onClick(View view) {
+                // URI of specific article
+                Uri itemUri = ItemsContract.Items.buildItemUri(getItemId(viewHolder.getAdapterPosition()));
 
-                    // URI of specific article
-                    Uri itemUri = ItemsContract.Items.buildItemUri(getItemId(viewHolder.getAdapterPosition()));
+                // start ArticleDetailActivity with the selected article
+                Intent intent = new Intent(mContext, ArticleDetailActivity.class);
+                intent.setData(itemUri);
+                startActivity(intent);
 
-                    // TODO this intent somehow calls ArticleDetailActivity
-                    Intent intent = new Intent(Intent.ACTION_VIEW, itemUri);
-                    startActivity(intent);
-                }
             });
 
             return viewHolder;
@@ -256,8 +223,7 @@ public class ArticleListActivity extends AppCompatActivity
                 String date = mCursor.getString(ArticleLoader.Query.PUBLISHED_DATE);
                 return dateFormat.parse(date);
             } catch (ParseException ex) {
-                Log.e(TAG, ex.getMessage());
-                Log.i(TAG, "Error passing today's date.");
+                Log.e(TAG, "Error parsing today's date.");
                 return new Date();
             }
         }

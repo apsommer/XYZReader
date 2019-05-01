@@ -82,14 +82,6 @@ public class ArticleDetailFragment extends Fragment implements
         if (getArguments().containsKey(ARG_ITEM_ID)) {
             mItemId = getArguments().getLong(ARG_ITEM_ID);
         }
-
-        // TODO options menu not shown, is this overflow?
-        setHasOptionsMenu(true);
-    }
-
-    // ensure this fragment was created by the detail activity
-    public ArticleDetailActivity getActivityCast() {
-        return (ArticleDetailActivity) getActivity();
     }
 
     // initialize the loader
@@ -97,10 +89,7 @@ public class ArticleDetailFragment extends Fragment implements
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        // in support library r8, calling initLoader for a fragment in a FragmentPagerAdapter
-        // in the fragment's onCreate may cause the same LoaderManager to be dealt to multiple
-        // fragments because their mIndex is -1 since they haven't been added to the activity yet
-        // therefore make this call in onActivityCreated.
+        // initialize an ArticleLoader
         getLoaderManager().initLoader(0, null, this);
     }
 
@@ -113,14 +102,12 @@ public class ArticleDetailFragment extends Fragment implements
         // get view references
         mPhotoView = mRootView.findViewById(R.id.photo);
 
-        mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
-                        .setType("text/plain")
-                        .setText("Some sample text")
-                        .getIntent(), getString(R.string.action_share)));
-            }
+        mRootView.findViewById(R.id.share_fab).setOnClickListener((View view) -> {
+
+            startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
+                    .setType("text/plain")
+                    .setText("Some sample text")
+                    .getIntent(), getString(R.string.action_share)));
         });
 
         bindViews();
@@ -133,8 +120,7 @@ public class ArticleDetailFragment extends Fragment implements
             String date = mCursor.getString(ArticleLoader.Query.PUBLISHED_DATE);
             return dateFormat.parse(date);
         } catch (ParseException ex) {
-            Log.e(TAG, ex.getMessage());
-            Log.i(TAG, "Error passing today's date.");
+            Log.e(TAG, "Error parsing today's date.");
             return new Date();
         }
     }
@@ -156,7 +142,7 @@ public class ArticleDetailFragment extends Fragment implements
 
         if (mCursor != null) {
 
-            // TODO this is supposed to animated the entire layout but appears to have no affect
+            // loader is finished so show the fragment with a simple fade animation
             mRootView.setAlpha(0);
             mRootView.setVisibility(View.VISIBLE);
             mRootView.animate().alpha(1);
@@ -180,7 +166,6 @@ public class ArticleDetailFragment extends Fragment implements
                         outputFormat.format(publishedDate) + " by <font color='#ffffff'>"
                         + mCursor.getString(ArticleLoader.Query.AUTHOR)
                                 + "</font>"));
-
             }
 
             // display the article body using <html> tag format
@@ -205,7 +190,7 @@ public class ArticleDetailFragment extends Fragment implements
                         public void onErrorResponse(VolleyError volleyError) {}
                     });
 
-        // there is no article so hide everything
+        // the loader is not finished, or there is no article, so hide everything
         } else {
 
             mRootView.setVisibility(View.GONE);
