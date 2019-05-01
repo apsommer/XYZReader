@@ -26,8 +26,9 @@
     <!-- miscellaneous colors -->
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
-    <color name="light_gray">#C0C0C0</color>
+    <color name="light_gray">#8fff</color>
     <color name="photo_placeholder">#2DB3B3B3</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="dark_gray">#6000</color>
 
 </resources>

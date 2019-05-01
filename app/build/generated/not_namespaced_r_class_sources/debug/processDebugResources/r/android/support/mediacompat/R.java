@@ -28,43 +28,43 @@ public final class R {
     public static final class color {
         private color() {}
 
-        public static final int notification_action_color_filter = 0x7f05006a;
-        public static final int notification_icon_bg_color = 0x7f05006b;
-        public static final int notification_material_background_media_default_color = 0x7f05006c;
-        public static final int primary_text_default_material_dark = 0x7f050075;
-        public static final int ripple_material_light = 0x7f05007a;
-        public static final int secondary_text_default_material_dark = 0x7f05007b;
-        public static final int secondary_text_default_material_light = 0x7f05007c;
+        public static final int notification_action_color_filter = 0x7f05006b;
+        public static final int notification_icon_bg_color = 0x7f05006c;
+        public static final int notification_material_background_media_default_color = 0x7f05006d;
+        public static final int primary_text_default_material_dark = 0x7f050076;
+        public static final int ripple_material_light = 0x7f05007b;
+        public static final int secondary_text_default_material_dark = 0x7f05007c;
+        public static final int secondary_text_default_material_light = 0x7f05007d;
     }
     public static final class dimen {
         private dimen() {}
 
-        public static final int compat_button_inset_horizontal_material = 0x7f060050;
-        public static final int compat_button_inset_vertical_material = 0x7f060051;
-        public static final int compat_button_padding_horizontal_material = 0x7f060052;
-        public static final int compat_button_padding_vertical_material = 0x7f060053;
-        public static final int compat_control_corner_material = 0x7f060054;
-        public static final int compat_notification_large_icon_max_height = 0x7f060055;
-        public static final int compat_notification_large_icon_max_width = 0x7f060056;
-        public static final int notification_action_icon_size = 0x7f0600d1;
-        public static final int notification_action_text_size = 0x7f0600d2;
-        public static final int notification_big_circle_margin = 0x7f0600d3;
-        public static final int notification_content_margin_start = 0x7f0600d4;
-        public static final int notification_large_icon_height = 0x7f0600d5;
-        public static final int notification_large_icon_width = 0x7f0600d6;
-        public static final int notification_main_column_padding_top = 0x7f0600d7;
-        public static final int notification_media_narrow_margin = 0x7f0600d8;
-        public static final int notification_right_icon_size = 0x7f0600d9;
-        public static final int notification_right_side_padding_top = 0x7f0600da;
-        public static final int notification_small_icon_background_padding = 0x7f0600db;
-        public static final int notification_small_icon_size_as_large = 0x7f0600dc;
-        public static final int notification_subtext_size = 0x7f0600dd;
-        public static final int notification_top_pad = 0x7f0600de;
-        public static final int notification_top_pad_large_text = 0x7f0600df;
-        public static final int subtitle_corner_radius = 0x7f0600e0;
-        public static final int subtitle_outline_width = 0x7f0600e1;
-        public static final int subtitle_shadow_offset = 0x7f0600e2;
-        public static final int subtitle_shadow_radius = 0x7f0600e3;
+        public static final int compat_button_inset_horizontal_material = 0x7f060053;
+        public static final int compat_button_inset_vertical_material = 0x7f060054;
+        public static final int compat_button_padding_horizontal_material = 0x7f060055;
+        public static final int compat_button_padding_vertical_material = 0x7f060056;
+        public static final int compat_control_corner_material = 0x7f060057;
+        public static final int compat_notification_large_icon_max_height = 0x7f060058;
+        public static final int compat_notification_large_icon_max_width = 0x7f060059;
+        public static final int notification_action_icon_size = 0x7f0600db;
+        public static final int notification_action_text_size = 0x7f0600dc;
+        public static final int notification_big_circle_margin = 0x7f0600dd;
+        public static final int notification_content_margin_start = 0x7f0600de;
+        public static final int notification_large_icon_height = 0x7f0600df;
+        public static final int notification_large_icon_width = 0x7f0600e0;
+        public static final int notification_main_column_padding_top = 0x7f0600e1;
+        public static final int notification_media_narrow_margin = 0x7f0600e2;
+        public static final int notification_right_icon_size = 0x7f0600e3;
+        public static final int notification_right_side_padding_top = 0x7f0600e4;
+        public static final int notification_small_icon_background_padding = 0x7f0600e5;
+        public static final int notification_small_icon_size_as_large = 0x7f0600e6;
+        public static final int notification_subtext_size = 0x7f0600e7;
+        public static final int notification_top_pad = 0x7f0600e8;
+        public static final int notification_top_pad_large_text = 0x7f0600e9;
+        public static final int subtitle_corner_radius = 0x7f0600eb;
+        public static final int subtitle_outline_width = 0x7f0600ec;
+        public static final int subtitle_shadow_offset = 0x7f0600ed;
+        public static final int subtitle_shadow_radius = 0x7f0600ee;
     }
     public static final class drawable {
         private drawable() {}

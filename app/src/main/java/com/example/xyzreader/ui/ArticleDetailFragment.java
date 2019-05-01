@@ -97,7 +97,7 @@ public class ArticleDetailFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         // inflate the layout
-        mRootView = inflater.inflate(R.layout.fragment_detail_material_design, container, false);
+        mRootView = inflater.inflate(R.layout.fragment_detail, container, false);
 
         // get view references
         mPhotoView = mRootView.findViewById(R.id.photo);

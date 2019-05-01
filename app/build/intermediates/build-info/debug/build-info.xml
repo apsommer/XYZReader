@@ -6,7 +6,7 @@
     density="hdpi"
     format="10"
     plugin-version="3.4.0"
-    timestamp="1556687196714"
+    timestamp="1556693043905"
     token="-2053720904755697986"
     verifier="COMPATIBLE" >
 
@@ -79,28 +79,28 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1556686671374"
+        timestamp="1556692947137"
         verifier="R_CLASS_CHANGE" >
-        <artifact
-            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
         <artifact
             location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
             location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
             location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
@@ -114,7 +114,7 @@
     </build>
     <build
         build-mode="HOT_WARM"
-        timestamp="1556687196714"
+        timestamp="1556693043905"
         verifier="COMPATIBLE" >
         <artifact
             location="C:\Android\XYZReader\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"

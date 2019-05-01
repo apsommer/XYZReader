@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tabTextView"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/appbar_height_collapsed"
     android:gravity="center"
-    android:textSize="16sp"
+    android:textSize="@dimen/tab_text_size"
     android:textColor="@color/white"
-    android:textAllCaps="false"
-    tools:text="Edgar Allen Poe" >
+    tools:text="1" >
 
 </TextView>

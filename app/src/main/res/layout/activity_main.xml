@@ -5,73 +5,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <!-- pager is filled with ArticleDetailFragments -->
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:scrollbarStyle="outsideOverlay"
-        />
+        android:background="@color/primary_light_200"
+        android:paddingTop="@dimen/content_padding_height"
+        android:paddingStart="@dimen/main_content_padding_width"
+        android:paddingEnd="@dimen/main_content_padding_width"
+        android:paddingBottom="@dimen/content_padding_height" />
+
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/appbar_height_expanded"
-        android:background="@color/primary_500"
-        >
+        android:background="@color/primary_500" >
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-             >
+            app:layout_scrollFlags="scroll|exitUntilCollapsed" >
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar_detail"
+                android:id="@+id/toolbar_list"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/appbar_height_collapsed"
-                app:layout_collapseMode="pin"
-                />
+                app:layout_collapseMode="pin" />
 
             <!-- logo -->
             <ImageView
-                android:layout_marginLeft="@dimen/list_side_margin"
-                android:layout_gravity="top"
+                android:layout_gravity="bottom"
                 android:layout_width="wrap_content"
-                android:layout_height="48dp"
+                android:layout_height="@dimen/appbar_entity_dimen"
                 android:src="@drawable/logo"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="@dimen/main_content_padding_width"
                 />
 
             <!-- refresh button -->
             <ImageButton
-                android:id="@+id/refresh_detail"
+                android:id="@+id/refresh_main"
                 android:layout_gravity="top|end"
-                android:padding="4dp"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:padding="@dimen/refresh_button_padding"
+                android:layout_width="@dimen/appbar_entity_dimen"
+                android:layout_height="@dimen/appbar_entity_dimen"
                 android:scaleType="fitXY"
                 android:src="@drawable/refresh"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:layout_marginEnd="@dimen/list_side_margin"
-                android:layout_marginTop="8dp"
-                />
-
-            <android.support.design.widget.TabLayout
-                android:id="@+id/tabs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/primary_500"
-                android:layout_gravity="bottom|center_horizontal"
-
-                app:tabGravity="center"
-                app:tabMode="scrollable"
-                app:tabIndicatorFullWidth="true"
-                app:tabMaxWidth="50dp"
-                app:tabIndicatorColor="@color/accent_A200"
+                android:layout_marginEnd="@dimen/main_content_padding_width"
+                android:layout_marginTop="@dimen/appbar_entity_padding"
                 />
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 </android.support.design.widget.CoordinatorLayout>
+

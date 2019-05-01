@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
+        <!-- background -->
         <ImageView
             android:id="@+id/photo"
             android:layout_width="match_parent"
@@ -20,61 +21,65 @@
             android:id="@+id/scrollview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="140dp"
+            android:paddingTop="@dimen/content_padding_height"
+            android:paddingBottom="@dimen/content_padding_height"
             android:clipToPadding="false"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp" >
+            android:layout_marginStart="@dimen/detail_content_padding_width"
+            android:layout_marginEnd="@dimen/detail_content_padding_width" >
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxWidth="@dimen/detail_card_max_width"
-                android:background="#fff"
-                android:elevation="4dp" >
+                android:background="@color/white"
+                android:elevation="@dimen/detail_content_elevation" >
 
+                <!-- title bar -->
                 <LinearLayout
                     android:id="@+id/meta_bar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#333"
                     android:orientation="vertical"
-                    android:paddingLeft="@dimen/detail_inner_horiz_margin"
-                    android:paddingRight="@dimen/detail_inner_horiz_margin"
-                    android:paddingTop="@dimen/detail_metabar_vert_padding"
-                    android:paddingBottom="@dimen/detail_metabar_vert_padding"
-                    android:layout_marginBottom="@dimen/detail_metabar_vert_padding" >
+                    android:paddingStart="@dimen/detail_inner_width_margin"
+                    android:paddingEnd="@dimen/detail_inner_width_margin"
+                    android:paddingTop="@dimen/detail_metabar_height_padding"
+                    android:paddingBottom="@dimen/detail_metabar_height_padding"
+                    android:layout_marginBottom="@dimen/detail_metabar_height_padding" >
 
+                    <!-- title -->
                     <TextView
                         android:id="@+id/article_title"
                         style="?android:attr/textAppearanceLarge"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
+                        android:paddingBottom="@dimen/detail_metabar_title_height_padding"
                         android:fontFamily="sans-serif-condensed"
-                        android:textColor="#fff"
+                        android:textColor="@color/white"
                         android:textStyle="bold"
                         android:textSize="@dimen/detail_title_text_size"
-                        android:lineSpacingMultiplier="0.9" />
+                        android:lineSpacingMultiplier="@fraction/detail_title_line_space_multiplier" />
 
+                    <!-- subtitle -->
                     <TextView
                         android:id="@+id/article_byline"
                         style="?android:attr/textAppearanceSmall"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#8fff" />
+                        android:textColor="@color/light_gray" />
                     
                 </LinearLayout>
 
+                <!-- article body -->
                 <TextView
                     android:id="@+id/article_body"
                     style="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
-                    android:layout_marginRight="@dimen/detail_inner_horiz_margin"
-                    android:layout_marginBottom="@dimen/detail_inner_horiz_margin"
-                    android:textColor="@color/light_gray"
+                    android:layout_marginStart="@dimen/detail_inner_width_margin"
+                    android:layout_marginEnd="@dimen/detail_inner_width_margin"
+                    android:layout_marginBottom="@dimen/detail_inner_width_margin"
+                    android:textColor="@color/dark_gray"
                     android:textColorLink="@color/accent_A200"
                     android:textSize="@dimen/detail_body_text_size"
                     android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier" />
@@ -90,7 +95,7 @@
         android:src="@drawable/ic_share"
         android:layout_gravity="end|bottom"
         android:backgroundTint="@color/accent_A200"
-        app:borderWidth="0dp"
+        app:borderWidth="@dimen/zero"
         android:layout_margin="@dimen/fab_margin" />
 
 </android.support.design.widget.CoordinatorLayout>

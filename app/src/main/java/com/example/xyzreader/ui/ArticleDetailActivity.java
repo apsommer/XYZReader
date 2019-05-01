@@ -1,6 +1,5 @@
 package com.example.xyzreader.ui;
 
-import android.content.ContentProvider;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.support.design.widget.TabLayout;
@@ -10,13 +9,11 @@ import android.support.v4.app.LoaderManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.Loader;
 import android.database.Cursor;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,7 +25,6 @@ import android.widget.TextView;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.ItemsContract;
-import com.example.xyzreader.data.ItemsProvider;
 
 // Loaders are depreciates as of API 28. Leave them in this app as they are integral to its function
 // and the purpose of this exercise is to implement Google Material Design principles, not to
@@ -53,7 +49,7 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
 
         // inflate layout
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_material_design);
+        setContentView(R.layout.activity_detail);
 
         // set member references
         mContext = this;
@@ -238,7 +234,7 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         public View getTabView(int position) {
 
             // root view is the single TextView
-            View tabView = LayoutInflater.from(mContext).inflate(R.layout.tab_detail_activity, null);
+            View tabView = LayoutInflater.from(mContext).inflate(R.layout.tab_detail, null);
             TextView textView = tabView.findViewById(R.id.tabTextView);
 
             // set the tab text, font, and capitalization

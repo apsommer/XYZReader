@@ -6,35 +6,35 @@
                 {
                     "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\values-sw600dp\\dimens.xml",
                     "from": {
-                        "startLines": "3,2,5,4",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "93,38,243,147",
-                        "endColumns": "52,53,41,94",
-                        "endOffsets": "141,87,280,237"
+                        "startLines": "3,5,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "40,190,94",
+                        "endColumns": "52,41,94",
+                        "endOffsets": "88,227,184"
                     },
                     "to": {
-                        "startLines": "20,26,27,28",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "1230,1572,1626,1668",
-                        "endColumns": "52,53,41,94",
-                        "endOffsets": "1278,1621,1663,1758"
+                        "startLines": "20,23,24",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "1230,1390,1432",
+                        "endColumns": "52,41,94",
+                        "endOffsets": "1278,1427,1522"
                     }
                 },
                 {
                     "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\values-sw600dp\\macro_layout.xml",
                     "from": {
-                        "startLines": "7,3,4,6,5,2",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "332,91,147,265,205,38",
-                        "endColumns": "56,54,56,65,58,51",
-                        "endOffsets": "384,141,199,326,259,85"
+                        "startLines": "7,3,2",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "153,91,38",
+                        "endColumns": "56,54,51",
+                        "endOffsets": "205,141,85"
                     },
                     "to": {
-                        "startLines": "19,21,22,23,24,25",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "1173,1283,1338,1395,1461,1520",
-                        "endColumns": "56,54,56,65,58,51",
-                        "endOffsets": "1225,1333,1390,1456,1515,1567"
+                        "startLines": "19,21,22",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "1173,1283,1338",
+                        "endColumns": "56,54,51",
+                        "endOffsets": "1225,1333,1385"
                     }
                 },
                 {
@@ -58,12 +58,12 @@
                         "endOffsets": "110,180,251,323,381,439,548,612,675,847"
                     },
                     "to": {
-                        "startLines": "10,11,12,13,14,15,16,18,29,30",
+                        "startLines": "10,11,12,13,14,15,16,18,25,26",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "611,671,741,812,884,942,1000,1109,1763,1826",
-                        "endLines": "10,11,12,13,14,15,17,18,29,33",
+                        "startOffsets": "611,671,741,812,884,942,1000,1109,1527,1590",
+                        "endLines": "10,11,12,13,14,15,17,18,25,29",
                         "endColumns": "59,69,70,71,57,57,10,63,62,10",
-                        "endOffsets": "666,736,807,879,937,995,1104,1168,1821,1993"
+                        "endOffsets": "666,736,807,879,937,995,1104,1168,1585,1757"
                     }
                 }
             ]

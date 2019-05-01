@@ -1,13 +1,9 @@
 package com.example.xyzreader.ui;
 
-import android.app.Activity;
-import android.app.ActivityOptions;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -62,7 +58,7 @@ public class ArticleListActivity extends AppCompatActivity
 
         // inflate layout
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_material_design);
+        setContentView(R.layout.activity_main);
 
         // set member references
         mContext = this;
@@ -158,7 +154,7 @@ public class ArticleListActivity extends AppCompatActivity
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
             // inflate an article item layout
-            View view = getLayoutInflater().inflate(R.layout.list_item_material_design, parent, false);
+            View view = getLayoutInflater().inflate(R.layout.item_main, parent, false);
 
             // create a new viewholder
             final ViewHolder viewHolder = new ViewHolder(view);
