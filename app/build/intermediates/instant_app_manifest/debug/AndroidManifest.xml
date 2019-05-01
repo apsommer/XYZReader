@@ -28,7 +28,7 @@
         <!-- launch article list -->
         <activity
             android:name="com.example.xyzreader.ui.ArticleListActivity"
-            android:label="Article List"
+            android:label="@string/app_name"
             android:launchMode="singleTop" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

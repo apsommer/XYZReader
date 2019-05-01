@@ -90,7 +90,7 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Drew\.grad
 activity#com.example.xyzreader.ui.ArticleListActivity
 ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:22:9-30:20
 	android:label
-		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:24:13-41
+		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:24:13-45
 	android:launchMode
 		ADDED from C:\Android\XYZReader\app\src\main\AndroidManifest.xml:25:13-43
 	android:name

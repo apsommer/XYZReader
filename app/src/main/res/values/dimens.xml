@@ -6,7 +6,7 @@
     <dimen name="content_padding_height">140dp</dimen>
     <dimen name="main_content_padding_width">64dp</dimen>
     <dimen name="detail_content_padding_width">112dp</dimen>
-    <dimen name="refresh_button_padding">8dp</dimen>
+    <dimen name="refresh_button_padding">4dp</dimen>
     <dimen name="appbar_entity_dimen">48dp</dimen>
     <dimen name="appbar_entity_padding">8dp</dimen>
     <dimen name="tab_width">50dp</dimen>
@@ -24,7 +24,7 @@
     <dimen name="item_title_padding_bottom">4dp</dimen>
 
     <!-- detail line spacing -->
-        <item name="detail_title_line_space_multiplier" format="float" type="fraction">0.9</item>
-        <item name="detail_body_line_spacing_multiplier" format="float" type="fraction">1.25</item>
+    <item name="detail_title_line_space_multiplier" format="float" type="fraction">0.9</item>
+    <item name="detail_body_line_spacing_multiplier" format="float" type="fraction">1.25</item>
 
 </resources>

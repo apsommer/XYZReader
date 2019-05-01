@@ -506,7 +506,6 @@ attr windowNoTitle
 bool abc_action_bar_embed_tabs
 bool abc_allow_stacked_button_bar
 bool abc_config_actionMenuItemAllCaps
-bool detail_is_card
 bool mtrl_btn_textappearance_all_caps
 color abc_background_cache_hint_selector_material_dark
 color abc_background_cache_hint_selector_material_light
@@ -781,20 +780,12 @@ dimen design_tab_scrollable_min_width
 dimen design_tab_text_size
 dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
-dimen detail_body_bottom_margin
 dimen detail_body_text_size
-dimen detail_body_top_margin
-dimen detail_card_max_width
-dimen detail_card_top_margin
 dimen detail_content_elevation
 dimen detail_content_padding_width
-dimen detail_inner_horiz_margin
 dimen detail_inner_width_margin
 dimen detail_metabar_height_padding
-dimen detail_metabar_title_bottom_padding
 dimen detail_metabar_title_height_padding
-dimen detail_metabar_vert_padding
-dimen detail_photo_height
 dimen detail_title_text_size
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
@@ -814,8 +805,6 @@ dimen item_title_padding_bottom
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
-dimen list_side_margin
-dimen list_toolbar_side_margin
 dimen main_content_padding_width
 dimen mtrl_bottomappbar_fabOffsetEndMode
 dimen mtrl_bottomappbar_fab_cradle_margin
@@ -988,7 +977,6 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
-drawable empty_detail
 drawable ic_arrow_back
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -1011,7 +999,6 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-drawable refresh
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 font rosario
@@ -1234,8 +1221,8 @@ integer cancel_button_image_alpha
 integer config_tooltipAnimTime
 integer design_snackbar_text_max_lines
 integer design_tab_indicator_anim_duration_ms
+integer grid_column_count
 integer hide_password_duration
-integer list_column_count
 integer mtrl_btn_anim_delay_ms
 integer mtrl_btn_anim_duration_ms
 integer mtrl_chip_anim_duration
@@ -1354,8 +1341,6 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
-string action_refresh
-string action_settings
 string action_share
 string app_name
 string appbar_scrolling_view_behavior
@@ -1372,9 +1357,8 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string search_menu_title
+string share_intent_sample_text
 string status_bar_notification_info_overflow
-string up
-string welcome_xyz_reader
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

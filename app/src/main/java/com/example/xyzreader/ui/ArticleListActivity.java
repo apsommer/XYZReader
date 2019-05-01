@@ -117,7 +117,7 @@ public class ArticleListActivity extends AppCompatActivity
         mRecyclerView.setAdapter(recyclerAdapter);
 
         // set number of columns in a staggered grid for the recycler view
-        int columnCount = getResources().getInteger(R.integer.list_column_count);
+        int columnCount = getResources().getInteger(R.integer.grid_column_count);
         StaggeredGridLayoutManager layoutManager =
                 new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
