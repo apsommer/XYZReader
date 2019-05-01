@@ -7,8 +7,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent" >
 
         <ImageView
             android:id="@+id/photo"
@@ -24,8 +23,7 @@
             android:paddingTop="140dp"
             android:clipToPadding="false"
             android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            >
+            android:layout_marginRight="100dp" >
 
             <LinearLayout
                 android:orientation="vertical"
@@ -65,7 +63,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="#8fff" />
-
+                    
                 </LinearLayout>
 
                 <TextView
@@ -92,8 +90,8 @@
         android:src="@drawable/ic_share"
         android:layout_gravity="end|bottom"
         android:backgroundTint="@color/accent_A200"
-        android:layout_margin="@dimen/fab_margin"
-        android:contentDescription="@string/action_share" />
+        app:borderWidth="0dp"
+        android:layout_margin="@dimen/fab_margin" />
 
 </android.support.design.widget.CoordinatorLayout>
 

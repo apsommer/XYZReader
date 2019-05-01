@@ -10,15 +10,4 @@
 
     </style>
 
-    <!-- viewpager tabs -->
-    <style name="TabStyle" parent="Widget.Design.TabLayout">
-        <!--<item name="tabIndicatorColor">@color/accent_A200</item>-->
-        <item name="tabTextAppearance">@style/TabTextAppearance</item>
-    </style>
-
-    <!-- viewpager tabs text -->
-    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
-
-    </style>
-
 </resources>

@@ -1,17 +1,9 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/CustomTheme"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-
-    <com.example.xyzreader.ui.DynamicHeightNetworkImageView
-        android:id="@+id/temp_image"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:transitionName="transition_image"
-        android:background="@color/white"
-        />
 
     <!-- pager is filled with ArticleDetailFragments -->
     <android.support.v4.view.ViewPager
@@ -20,7 +12,6 @@
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:scrollbarStyle="outsideOverlay"
-        android:background="@color/primary_light_200"
         />
 
     <android.support.design.widget.AppBarLayout
@@ -38,7 +29,6 @@
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar_detail"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/appbar_height_collapsed"
                 app:layout_collapseMode="pin"
@@ -47,11 +37,11 @@
             <!-- logo -->
             <ImageView
                 android:layout_marginLeft="@dimen/list_side_margin"
-                android:layout_marginRight="@dimen/list_side_margin"
                 android:layout_gravity="top"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:src="@drawable/logo"
+                android:layout_marginTop="8dp"
                 />
 
             <!-- refresh button -->
@@ -80,7 +70,6 @@
                 app:tabIndicatorFullWidth="true"
                 app:tabMaxWidth="50dp"
                 app:tabIndicatorColor="@color/accent_A200"
-
                 />
 
         </android.support.design.widget.CollapsingToolbarLayout>

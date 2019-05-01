@@ -31,19 +31,17 @@
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar_list"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/appbar_height_collapsed"
                 app:layout_collapseMode="pin" />
 
             <!-- logo -->
             <ImageView
-                android:layout_marginLeft="@dimen/list_side_margin"
-                android:layout_marginRight="@dimen/list_side_margin"
                 android:layout_gravity="bottom"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:src="@drawable/logo"
+                android:layout_marginLeft="@dimen/list_side_margin"
                 />
 
             <!-- refresh button -->
