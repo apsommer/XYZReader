@@ -2,35 +2,45 @@
 <instant-run
     abi="armeabi-v7a,armeabi"
     api-level="22"
-    build-mode="HOT_WARM"
+    build-mode="COLD"
     density="hdpi"
     format="10"
+    ir-eligibility="CLASS_ADDED"
     plugin-version="3.4.0"
-    timestamp="1556657655293"
+    timestamp="1556674547390"
     token="-2053720904755697986"
-    verifier="COMPATIBLE" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="1074" />
+        duration="789" />
     <task
         name="instant-run-dex"
-        duration="1031" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="84" />
+        duration="15" />
     <task
         name="verifier"
-        duration="70" />
+        duration="0" />
 
     <artifact
-        location="C:\Android\XYZReader\app\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
+        location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Android\XYZReader\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1556657300916"
+        timestamp="1556673936413"
         verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Android\XYZReader\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
@@ -61,20 +71,18 @@
         <artifact
             location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1556674547390"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
             location="C:\Android\XYZReader\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1556657655293"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Android\XYZReader\app\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

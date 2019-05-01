@@ -8,6 +8,8 @@
         <item name="android:colorAccent">@color/accent_A200</item>
         <item name="android:statusBarColor">@color/primary_dark_700</item>
 
+        <item name="android:windowExitTransition">@transition/grid_exit</item>
+
     </style>
 
     <!-- viewpager tabs -->

@@ -9,7 +9,6 @@ import android.content.IntentFilter;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -17,8 +16,6 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -146,13 +143,13 @@ public class ArticleListActivity extends AppCompatActivity
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
 
         // create a default framework adapter
-        Adapter adapter = new Adapter(cursor);
+        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(cursor);
 
         // stable IDs allow for memory usage optimization
-        adapter.setHasStableIds(true);
+        recyclerAdapter.setHasStableIds(true);
 
         // associate adapter to recycler view
-        mRecyclerView.setAdapter(adapter);
+        mRecyclerView.setAdapter(recyclerAdapter);
 
         // set number of columns in a staggered grid for the recycler view
         int columnCount = getResources().getInteger(R.integer.list_column_count);
@@ -171,13 +168,13 @@ public class ArticleListActivity extends AppCompatActivity
     }
 
     // simple adapter using a local DB cursor and viewholder
-    private class Adapter extends RecyclerView.Adapter<ViewHolder> {
+    private class RecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
 
         // member variable
         private Cursor mCursor;
 
         // instantiate adapter with a database cursor
-        public Adapter(Cursor cursor) {
+        public RecyclerAdapter(Cursor cursor) {
             mCursor = cursor;
         }
 
@@ -199,6 +196,7 @@ public class ArticleListActivity extends AppCompatActivity
 
             // set a click listener on the item layout that TODO ...
             view.setOnClickListener(new View.OnClickListener() {
+
                 @Override
                 public void onClick(View view) {
 
