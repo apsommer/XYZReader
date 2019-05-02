@@ -978,7 +978,6 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
-drawable ic_keyboard_backspace
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -1104,6 +1103,7 @@ id listMode
 id list_item
 id masked
 id media_actions
+id menu_item
 id message
 id meta_bar
 id middle
@@ -1130,8 +1130,7 @@ id progress_horizontal
 id radio
 id recycler_view
 id refresh_detail
-id refresh_main
-id refresh_menu_item
+id refresh_iv
 id right
 id right_icon
 id right_side
@@ -1281,7 +1280,7 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_detail
 layout item_main
-layout menu_item_refresh_button
+layout menu_item_refresh
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action

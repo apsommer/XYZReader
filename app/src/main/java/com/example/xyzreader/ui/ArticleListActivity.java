@@ -11,7 +11,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.ActionMenuView;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.Html;
@@ -23,10 +22,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageButton;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -51,8 +49,7 @@ public class ArticleListActivity extends AppCompatActivity
     private static final String TAG = ArticleListActivity.class.toString();
     private RecyclerView mRecyclerView;
     private Context mContext;
-    private ImageButton mRefreshButton;
-    private Animation mRotation;
+    private ImageView mRefreshButton;
 
     // use default locale date formats, most time functions can only handle years 1902 - 2037
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss", Locale.US);
@@ -71,22 +68,11 @@ public class ArticleListActivity extends AppCompatActivity
 
         // get view references
         mRecyclerView = findViewById(R.id.recycler_view);
-        mRefreshButton = findViewById(R.id.refresh_main);
 
         // clean up action bar
         setSupportActionBar(findViewById(R.id.toolbar_list));
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
-
-        // set a rotating animation on the refresh button
-        mRotation = AnimationUtils.loadAnimation(mContext, R.anim.rotation);
-        mRefreshButton.startAnimation(mRotation);
-
-        // clicking the refresh button starts the rotation animation and updates the UI
-        mRefreshButton.setOnClickListener((View view) -> {
-            mRefreshButton.startAnimation(mRotation);
-            startUpdaterService();
-        });
 
         // initialize an ArticleLoader
         getSupportLoaderManager().initLoader(0, null, this);
@@ -100,30 +86,43 @@ public class ArticleListActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
+        // inflate the single item menu
         getMenuInflater().inflate(R.menu.menu_main, menu);
-//
-//        ActionMenuView refreshButton = (ActionMenuView) menu.findItem(R.id.refresh_menu_item);
-//
-//        if (refreshButton != null) {
-//            //refreshButton.setImageResource(R.drawable.refresh);
-//
-//            refreshButton.setOnClickListener((View view) -> {
-//                refreshButton.startAnimation(mRotation);
-//                startUpdaterService();
-//            });
-//        }
-
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        if (item.getItemId() == R.id.refresh_menu_item) {
-            Toast.makeText(mContext, "Refresh clicked", Toast.LENGTH_LONG).show();
+        // double check the item ID
+        if (item.getItemId() == R.id.menu_item) {
+
+            // define a rotation animation
+            Animation rotation = AnimationUtils.loadAnimation(mContext, R.anim.rotation);
+
+            // start the animation on the refresh button
+            mRefreshButton.startAnimation(rotation);
+
+            // restart the loader via the update service
+            startUpdaterService();
+
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+
+        // get references to the custom menu item layout
+        final MenuItem menuItem = menu.findItem(R.id.menu_item);
+        FrameLayout rootView = (FrameLayout) menuItem.getActionView();
+        mRefreshButton = rootView.findViewById(R.id.refresh_iv);
+
+        // this manual call to onOptionsItemSelected is required when using a custom layout
+        rootView.setOnClickListener((View view) -> onOptionsItemSelected(menuItem));
+
+        return super.onPrepareOptionsMenu(menu);
     }
 
     // simple helper function starts updater service class
