@@ -7,28 +7,25 @@
     format="10"
     ir-eligibility="R_CLASS_CHANGE"
     plugin-version="3.4.0"
-    timestamp="1556831799965"
+    timestamp="1556832455619"
     token="-2053720904755697986"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="923" />
+        duration="1108" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="45" />
+        duration="80" />
     <task
         name="verifier"
-        duration="54" />
+        duration="43" />
 
     <artifact
         location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
         type="SPLIT" />
     <artifact
         location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
@@ -40,13 +37,16 @@
         location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
         type="SPLIT" />
     <artifact
+        location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
         location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
         type="SPLIT" />
     <artifact
         location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
         type="SPLIT" />
     <artifact
         location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
@@ -99,13 +99,10 @@
     <build
         build-mode="COLD"
         ir-eligibility="R_CLASS_CHANGE"
-        timestamp="1556831799965"
+        timestamp="1556832455619"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
             location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
@@ -117,13 +114,16 @@
             location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
             location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
             location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_8.apk"

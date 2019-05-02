@@ -9,6 +9,4 @@
         app:actionLayout="@layout/menu_item_refresh"
         app:showAsAction="always" />
 
-    <!--android:icon="@drawable/refresh"-->
-
 </menu>

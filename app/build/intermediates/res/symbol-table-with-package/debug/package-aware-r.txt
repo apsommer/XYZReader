@@ -1129,8 +1129,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id recycler_view
-id refresh_detail
-id refresh_iv
+id refresh_icon
 id right
 id right_icon
 id right_side

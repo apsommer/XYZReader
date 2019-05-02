@@ -17,8 +17,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toolbar;
-
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 

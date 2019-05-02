@@ -1,7 +1,5 @@
 package com.example.xyzreader.ui;
 
-import android.graphics.drawable.Animatable;
-import android.graphics.drawable.Drawable;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.content.Context;
@@ -117,7 +115,7 @@ public class ArticleListActivity extends AppCompatActivity
         // get references to the custom menu item layout
         final MenuItem menuItem = menu.findItem(R.id.menu_item);
         FrameLayout rootView = (FrameLayout) menuItem.getActionView();
-        mRefreshButton = rootView.findViewById(R.id.refresh_iv);
+        mRefreshButton = rootView.findViewById(R.id.refresh_icon);
 
         // this manual call to onOptionsItemSelected is required when using a custom layout
         rootView.setOnClickListener((View view) -> onOptionsItemSelected(menuItem));

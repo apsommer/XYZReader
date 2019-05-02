@@ -16,10 +16,13 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageButton;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.xyzreader.R;
@@ -39,7 +42,7 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
     private DetailPagerAdapter mPagerAdapter;
     private TabLayout mTabLayout;
     private Context mContext;
-    private ImageButton mRefreshButton;
+    private ImageView mRefreshButton;
     private Animation mRotation;
     private int mPosition;
 
@@ -56,27 +59,12 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         // get view references
         mPager = findViewById(R.id.pager);
         mTabLayout = findViewById(R.id.tabs);
-        mRefreshButton = findViewById(R.id.refresh_detail);
 
         // clean up action bar
         setSupportActionBar(findViewById(R.id.toolbar_detail));
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayHomeAsUpEnabled(true);
-
-        // set a rotating animation on the refresh button
-        mRotation = AnimationUtils.loadAnimation(mContext, R.anim.rotation);
-        mRefreshButton.startAnimation(mRotation);
-
-        // clicking the refresh button starts the rotation animation and updates the UI
-        mRefreshButton.setOnClickListener((View view) -> {
-
-            mRefreshButton.startAnimation(mRotation);
-
-            // even though nothing has changed in the database, refresh from it anyway
-            getContentResolver().notifyChange(ItemsContract.Items.buildDirUri(), null);
-
-        });
 
         getSupportLoaderManager().initLoader(0, null, this);
 
@@ -99,6 +87,48 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         if (savedInstanceState == null && getIntent() != null && getIntent().getData() != null) {
             mStartId = ItemsContract.Items.getItemId(getIntent().getData());
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        // inflate the single item menu
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        // double check the item ID
+        if (item.getItemId() == R.id.menu_item) {
+
+            // define a rotation animation
+            Animation rotation = AnimationUtils.loadAnimation(mContext, R.anim.rotation);
+
+            // start the animation on the refresh button
+            mRefreshButton.startAnimation(rotation);
+
+            // TODO comment
+            getContentResolver().notifyChange(ItemsContract.Items.buildDirUri(), null);
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+
+        // get references to the custom menu item layout
+        final MenuItem menuItem = menu.findItem(R.id.menu_item);
+        FrameLayout rootView = (FrameLayout) menuItem.getActionView();
+        mRefreshButton = rootView.findViewById(R.id.refresh_icon);
+
+        // this manual call to onOptionsItemSelected is required when using a custom layout
+        rootView.setOnClickListener((View view) -> onOptionsItemSelected(menuItem));
+
+        return super.onPrepareOptionsMenu(menu);
     }
 
     // return a new ArticleLoader

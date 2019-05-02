@@ -5,9 +5,9 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center" >
 
-    <!--  -->
+    <!-- refresh icon -->
     <ImageView
-        android:id="@+id/refresh_iv"
+        android:id="@+id/refresh_icon"
         android:layout_gravity="top|end"
         android:padding="@dimen/refresh_button_padding"
         android:layout_width="@dimen/appbar_entity_dimen"
@@ -15,8 +15,6 @@
         android:scaleType="fitXY"
         android:src="@drawable/refresh"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:layout_marginEnd="@dimen/main_content_padding_width"
-        android:layout_marginTop="@dimen/appbar_entity_padding"
         />
 
 </FrameLayout>
