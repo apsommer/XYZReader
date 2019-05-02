@@ -1,5 +1,7 @@
 package com.example.xyzreader.ui;
 
+import android.graphics.drawable.Animatable;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.content.Context;
@@ -9,17 +11,22 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ActionMenuView;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -46,7 +53,6 @@ public class ArticleListActivity extends AppCompatActivity
     private Context mContext;
     private ImageButton mRefreshButton;
     private Animation mRotation;
-    private boolean mIsRefreshing;
 
     // use default locale date formats, most time functions can only handle years 1902 - 2037
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss", Locale.US);
@@ -73,7 +79,7 @@ public class ArticleListActivity extends AppCompatActivity
         actionBar.setDisplayShowTitleEnabled(false);
 
         // set a rotating animation on the refresh button
-        mRotation = AnimationUtils.loadAnimation(mContext, R.anim.rotate_refresh);
+        mRotation = AnimationUtils.loadAnimation(mContext, R.anim.rotation);
         mRefreshButton.startAnimation(mRotation);
 
         // clicking the refresh button starts the rotation animation and updates the UI
@@ -89,6 +95,35 @@ public class ArticleListActivity extends AppCompatActivity
         if (savedInstanceState == null) {
             startUpdaterService();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+//
+//        ActionMenuView refreshButton = (ActionMenuView) menu.findItem(R.id.refresh_menu_item);
+//
+//        if (refreshButton != null) {
+//            //refreshButton.setImageResource(R.drawable.refresh);
+//
+//            refreshButton.setOnClickListener((View view) -> {
+//                refreshButton.startAnimation(mRotation);
+//                startUpdaterService();
+//            });
+//        }
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId() == R.id.refresh_menu_item) {
+            Toast.makeText(mContext, "Refresh clicked", Toast.LENGTH_LONG).show();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     // simple helper function starts updater service class

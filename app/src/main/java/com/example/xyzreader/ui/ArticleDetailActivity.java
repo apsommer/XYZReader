@@ -41,7 +41,6 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
     private Context mContext;
     private ImageButton mRefreshButton;
     private Animation mRotation;
-    private boolean mIsRefreshing;
     private int mPosition;
 
     @Override
@@ -63,9 +62,10 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         setSupportActionBar(findViewById(R.id.toolbar_detail));
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         // set a rotating animation on the refresh button
-        mRotation = AnimationUtils.loadAnimation(mContext, R.anim.rotate_refresh);
+        mRotation = AnimationUtils.loadAnimation(mContext, R.anim.rotation);
         mRefreshButton.startAnimation(mRotation);
 
         // clicking the refresh button starts the rotation animation and updates the UI

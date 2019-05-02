@@ -17,6 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toolbar;
+
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 
@@ -102,6 +104,7 @@ public class ArticleDetailFragment extends Fragment implements
         // get view references
         mPhotoView = mRootView.findViewById(R.id.photo);
 
+        // FAB click sends a share intent
         mRootView.findViewById(R.id.share_fab).setOnClickListener((View view) -> {
 
             startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())

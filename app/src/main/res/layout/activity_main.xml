@@ -52,7 +52,7 @@
                 android:layout_width="@dimen/appbar_entity_dimen"
                 android:layout_height="@dimen/appbar_entity_dimen"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_refresh"
+                android:src="@drawable/refresh"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:layout_marginEnd="@dimen/main_content_padding_width"
                 android:layout_marginTop="@dimen/appbar_entity_padding"
