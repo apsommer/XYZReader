@@ -254,8 +254,8 @@ public class ArticleListActivity extends AppCompatActivity
                     mCursor.getString(ArticleLoader.Query.THUMB_URL),
                     ImageLoaderHelper.getInstance(ArticleListActivity.this).getImageLoader());
 
-            // this call overrides the aspect ratio set in DynamicHeightNetworkImageView, which
-            // allows the card views in a tablet to be varying sizes
+            // setAspectRatio dynamically defines the view bounds in set in xml
+            // which allows the card views in a tablet to vary in size
             if (mIsTablet) {
                 holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
             }

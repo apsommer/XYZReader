@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="armeabi-v7a,armeabi"
-    api-level="21"
+    api-level="22"
     build-mode="HOT_WARM"
-    density="xxhdpi"
+    density="hdpi"
     format="10"
     plugin-version="3.4.0"
-    timestamp="1556867889126"
+    timestamp="1556923724821"
     token="-2053720904755697986"
     verifier="COMPATIBLE" >
 
@@ -29,7 +29,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1556865191847"
+        timestamp="1556923359030"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
@@ -70,38 +70,7 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="R_CLASS_CHANGE"
-        timestamp="1556866439902"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="FIELD_ADDED"
-        timestamp="1556866745750"
+        timestamp="1556923481855"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Android\XYZReader\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
@@ -112,15 +81,23 @@
     </build>
     <build
         build-mode="HOT_WARM"
-        timestamp="1556866974997"
+        timestamp="1556923560792"
         verifier="COMPATIBLE" >
         <artifact
-            location="C:\Android\XYZReader\app\build\intermediates\builds\debug\1556866974997\classes.dex"
+            location="C:\Android\XYZReader\app\build\intermediates\builds\debug\1556923560792\classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
         build-mode="HOT_WARM"
-        timestamp="1556867889126"
+        timestamp="1556923685877"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Android\XYZReader\app\build\intermediates\builds\debug\1556923685877\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1556923724821"
         verifier="COMPATIBLE" >
         <artifact
             location="C:\Android\XYZReader\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"

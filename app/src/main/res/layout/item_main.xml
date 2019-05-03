@@ -14,10 +14,9 @@
         <!-- thumbnail -->
         <com.example.xyzreader.ui.DynamicHeightNetworkImageView
             android:id="@+id/thumbnail"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:adjustViewBounds="false"
-            android:scaleType="fitXY"
+            android:layout_width="@dimen/thumbnail_dimen"
+            android:layout_height="@dimen/thumbnail_dimen"
+            android:scaleType="centerCrop"
             android:background="@color/primary_light_200" />
 
         <!-- title metadata -->

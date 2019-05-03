@@ -183,7 +183,7 @@ public class ArticleDetailFragment extends Fragment implements
 
             // the article covers this image in the phone UI
             // TODO set it in the appbar for fancy animation?
-            if (!mIsTablet) {
+            if (mIsTablet) {
 
                 // set the article image using the 'volley' library
                 ImageLoaderHelper.getInstance(getActivity()).getImageLoader()

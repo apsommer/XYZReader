@@ -19,6 +19,7 @@ public class DynamicHeightNetworkImageView extends NetworkImageView {
     public DynamicHeightNetworkImageView(Context context, AttributeSet attrs, int defStyle) {super(context, attrs, defStyle);}
 
     // set aspect ratio of the image
+    // calls onMeasure and overrides view bounds set in xml
     public void setAspectRatio(float aspectRatio) {
 
         mAspectRatio = aspectRatio;
