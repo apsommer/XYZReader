@@ -33,7 +33,8 @@
 
             <!-- logo -->
             <ImageView
-                android:paddingStart="4dp"
+                android:id="@+id/logo"
+                android:paddingStart="@dimen/appbar_logo_padding"
                 android:layout_gravity="top"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/appbar_entity_dimen"
@@ -41,6 +42,7 @@
                 android:layout_marginStart="@dimen/main_content_padding_width"
                 android:layout_marginTop="@dimen/appbar_entity_padding" />
 
+            <!-- tabs -->
             <android.support.design.widget.TabLayout
                 android:id="@+id/tabs"
                 android:layout_width="wrap_content"

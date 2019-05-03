@@ -506,6 +506,7 @@ attr windowNoTitle
 bool abc_action_bar_embed_tabs
 bool abc_allow_stacked_button_bar
 bool abc_config_actionMenuItemAllCaps
+bool is_tablet
 bool mtrl_btn_textappearance_all_caps
 color abc_background_cache_hint_selector_material_dark
 color abc_background_cache_hint_selector_material_light
@@ -724,6 +725,7 @@ dimen appbar_entity_dimen
 dimen appbar_entity_padding
 dimen appbar_height_collapsed
 dimen appbar_height_expanded
+dimen appbar_logo_padding
 dimen card_margin
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
@@ -735,7 +737,8 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
-dimen content_padding_height
+dimen content_padding_height_bottom
+dimen content_padding_height_top
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
 dimen design_bottom_navigation_active_item_min_width
@@ -1101,6 +1104,7 @@ id line1
 id line3
 id listMode
 id list_item
+id logo
 id masked
 id media_actions
 id menu_item

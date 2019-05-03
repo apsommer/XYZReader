@@ -1,0 +1,5 @@
+<resources>
+
+    <!-- phone -->
+    <bool name="is_tablet">false</bool>
+</resources>

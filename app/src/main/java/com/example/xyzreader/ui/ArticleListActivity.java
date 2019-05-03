@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.Html;
@@ -48,6 +49,7 @@ public class ArticleListActivity extends AppCompatActivity
     private RecyclerView mRecyclerView;
     private Context mContext;
     private ImageView mRefreshButton;
+    private boolean mIsTablet;
 
     // use default locale date formats, most time functions can only handle years 1902 - 2037
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss", Locale.US);
@@ -63,6 +65,7 @@ public class ArticleListActivity extends AppCompatActivity
 
         // set member references
         mContext = this;
+        mIsTablet = getResources().getBoolean(R.bool.is_tablet);
 
         // get view references
         mRecyclerView = findViewById(R.id.recycler_view);
@@ -148,12 +151,22 @@ public class ArticleListActivity extends AppCompatActivity
         // associate adapter to recycler view
         mRecyclerView.setAdapter(recyclerAdapter);
 
-        // set number of columns in a staggered grid for the recycler view
-        int columnCount = getResources().getInteger(R.integer.grid_column_count);
-        StaggeredGridLayoutManager layoutManager =
-                new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
-        mRecyclerView.setLayoutManager(layoutManager);
+        // phone UI
+        if (!mIsTablet) {
 
+            RecyclerView.LayoutManager layoutManager =
+                    new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
+            mRecyclerView.setLayoutManager(layoutManager);
+
+        // tablet UI
+        } else {
+
+            // set number of columns in a staggered grid for the recycler view
+            int columnCount = getResources().getInteger(R.integer.grid_column_count);
+            StaggeredGridLayoutManager layoutManager =
+                    new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
+            mRecyclerView.setLayoutManager(layoutManager);
+        }
     }
 
     // refresh the UI
@@ -241,8 +254,11 @@ public class ArticleListActivity extends AppCompatActivity
                     mCursor.getString(ArticleLoader.Query.THUMB_URL),
                     ImageLoaderHelper.getInstance(ArticleListActivity.this).getImageLoader());
 
-            // this call overrides the aspect ratio set in DynamicHeightNetworkImageView
-            holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
+            // this call overrides the aspect ratio set in DynamicHeightNetworkImageView, which
+            // allows the card views in a tablet to be varying sizes
+            if (mIsTablet) {
+                holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
+            }
         }
 
         // reformat the date string

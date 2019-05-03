@@ -43,8 +43,8 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
     private TabLayout mTabLayout;
     private Context mContext;
     private ImageView mRefreshButton;
-    private Animation mRotation;
     private int mPosition;
+    private boolean mIsTablet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,7 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
 
         // set member references
         mContext = this;
+        mIsTablet = getResources().getBoolean(R.bool.is_tablet);
 
         // get view references
         mPager = findViewById(R.id.pager);
@@ -65,6 +66,12 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        // hide the logo on a phone there is not enough room
+        if (!mIsTablet) {
+            ImageView logoIV = findViewById(R.id.logo);
+            logoIV.setVisibility(View.GONE);
+        }
 
         getSupportLoaderManager().initLoader(0, null, this);
 
@@ -109,7 +116,7 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
             // start the animation on the refresh button
             mRefreshButton.startAnimation(rotation);
 
-            // TODO comment
+            // even the underlying database has not changed, refresh it anyway
             getContentResolver().notifyChange(ItemsContract.Items.buildDirUri(), null);
 
         }

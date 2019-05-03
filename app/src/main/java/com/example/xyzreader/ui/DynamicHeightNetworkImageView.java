@@ -11,7 +11,7 @@ import com.android.volley.toolbox.NetworkImageView;
 public class DynamicHeightNetworkImageView extends NetworkImageView {
 
     // aspect ratio = width / height
-    private float mAspectRatio = 1.5f;
+    private float mAspectRatio = 1f;
 
     // constructors defer to superclass
     public DynamicHeightNetworkImageView(Context context) {super(context);}
@@ -20,12 +20,14 @@ public class DynamicHeightNetworkImageView extends NetworkImageView {
 
     // set aspect ratio of the image
     public void setAspectRatio(float aspectRatio) {
+
         mAspectRatio = aspectRatio;
-        requestLayout(); // redraw layout
+
+        // redraw layout calls onMeasure
+        requestLayout();
     }
 
     // enforce aspect ratio
-    // NOTE this method is overriden by a call to setAspectRatio() above
     @Override
     protected void onMeasure(int widthSpec, int heightSpec) {
 

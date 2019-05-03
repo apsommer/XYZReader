@@ -46,6 +46,7 @@ public class ArticleDetailFragment extends Fragment implements
     private long mItemId;
     private View mRootView;
     private ImageView mPhotoView;
+    private boolean mIsTablet;
 
     // use default locale date formats
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss", Locale.US);
@@ -96,11 +97,17 @@ public class ArticleDetailFragment extends Fragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        // set member variables
+        mIsTablet = getResources().getBoolean(R.bool.is_tablet);
+
         // inflate the layout
         mRootView = inflater.inflate(R.layout.fragment_detail, container, false);
 
         // get view references
         mPhotoView = mRootView.findViewById(R.id.photo);
+
+        // the article covers this image in the phone UI
+        if (!mIsTablet) mPhotoView.setVisibility(View.GONE);
 
         // FAB click sends a share intent
         mRootView.findViewById(R.id.share_fab).setOnClickListener((View view) -> {
@@ -173,23 +180,29 @@ public class ArticleDetailFragment extends Fragment implements
             bodyView.setText(Html.fromHtml(
                     mCursor.getString(ArticleLoader.Query.BODY).replaceAll("(\r\n|\n)", "<br />")));
 
-            // set the article image using the 'volley' library
-            ImageLoaderHelper.getInstance(getActivity()).getImageLoader()
-                    .get(mCursor.getString(ArticleLoader.Query.PHOTO_URL), new ImageLoader.ImageListener() {
 
-                        // set the image
-                        @Override
-                        public void onResponse(ImageLoader.ImageContainer imageContainer, boolean b) {
-                            Bitmap bitmap = imageContainer.getBitmap();
-                            if (bitmap != null) {
-                                mPhotoView.setImageBitmap(imageContainer.getBitmap());
+            // the article covers this image in the phone UI
+            // TODO set it in the appbar for fancy animation?
+            if (!mIsTablet) {
+
+                // set the article image using the 'volley' library
+                ImageLoaderHelper.getInstance(getActivity()).getImageLoader()
+                        .get(mCursor.getString(ArticleLoader.Query.PHOTO_URL), new ImageLoader.ImageListener() {
+
+                            // set the image
+                            @Override
+                            public void onResponse(ImageLoader.ImageContainer imageContainer, boolean b) {
+                                Bitmap bitmap = imageContainer.getBitmap();
+                                if (bitmap != null) {
+                                    mPhotoView.setImageBitmap(imageContainer.getBitmap());
+                                }
                             }
-                        }
 
-                        // do nothing
-                        @Override
-                        public void onErrorResponse(VolleyError volleyError) {}
-                    });
+                            // do nothing
+                            @Override
+                            public void onErrorResponse(VolleyError volleyError) {}
+                        });
+            }
 
         // the loader is not finished, or there is no article, so hide everything
         } else {
