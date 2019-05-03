@@ -27,7 +27,7 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar_detail"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/appbar_height_collapsed"
+                android:layout_height="?actionBarSize"
                 app:navigationIcon="@drawable/back"
                 app:layout_collapseMode="pin" />
 
