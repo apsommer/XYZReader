@@ -1,35 +1,36 @@
 <resources>
 
-    <!-- phone -->
+    <!-- common -->
     <dimen name="appbar_height_expanded">112dp</dimen>
     <dimen name="appbar_height_collapsed">56dp</dimen>
     <dimen name="content_padding_height_top">56dp</dimen>
-
+    <dimen name="main_content_padding_height_top">56dp</dimen>
     <dimen name="content_padding_height_bottom">0dp</dimen>
     <dimen name="main_content_padding_width">0dp</dimen>
     <dimen name="detail_content_padding_width">0dp</dimen>
+    <dimen name="detail_metabar_height_padding">32dp</dimen>
+    <dimen name="detail_metabar_title_height_padding">8dp</dimen>
+    <dimen name="zero">0dp</dimen>
+    <dimen name="card_margin">4dp</dimen>
+    <dimen name="item_title_padding">16dp</dimen>
+    <dimen name="item_title_padding_bottom">4dp</dimen>
+
+        <!-- detail line spacing -->
+        <item name="detail_title_line_space_multiplier" format="float" type="fraction">0.9</item>
+        <item name="detail_body_line_spacing_multiplier" format="float" type="fraction">1.25</item>
+
+    <!-- phone portrait -->
     <dimen name="refresh_button_padding">4dp</dimen>
     <dimen name="appbar_entity_dimen">48dp</dimen>
     <dimen name="appbar_entity_padding">8dp</dimen>
     <dimen name="tab_width">50dp</dimen>
     <dimen name="tab_text_size">16sp</dimen>
     <dimen name="detail_content_elevation">4dp</dimen>
-    <dimen name="detail_inner_width_margin">32dp</dimen>
-
-    <dimen name="detail_metabar_height_padding">32dp</dimen>
-    <dimen name="detail_metabar_title_height_padding">8dp</dimen>
     <dimen name="detail_title_text_size">32sp</dimen>
     <dimen name="detail_body_text_size">16sp</dimen>
-    <dimen name="zero">0dp</dimen>
+    <dimen name="detail_inner_width_margin">32dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="card_margin">4dp</dimen>
-    <dimen name="item_title_padding">16dp</dimen>
-    <dimen name="item_title_padding_bottom">4dp</dimen>
     <dimen name="appbar_logo_padding">12dp</dimen>
     <dimen name="thumbnail_dimen">100dp</dimen>
-
-    <!-- detail line spacing -->
-    <item name="detail_title_line_space_multiplier" format="float" type="fraction">0.9</item>
-    <item name="detail_body_line_spacing_multiplier" format="float" type="fraction">1.25</item>
 
 </resources>

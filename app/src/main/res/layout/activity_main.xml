@@ -12,7 +12,7 @@
         android:clipToPadding="false"
         android:scrollbarStyle="outsideOverlay"
         android:background="@color/primary_light_200"
-        android:paddingTop="@dimen/content_padding_height_top"
+        android:paddingTop="@dimen/main_content_padding_height_top"
         android:paddingStart="@dimen/main_content_padding_width"
         android:paddingEnd="@dimen/main_content_padding_width"
         android:paddingBottom="@dimen/content_padding_height_bottom" />
@@ -31,7 +31,7 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar_list"
                 android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
+                android:layout_height="@dimen/appbar_height_collapsed"
                 app:layout_collapseMode="pin" />
 
             <!-- logo -->

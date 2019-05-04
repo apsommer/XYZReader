@@ -1,5 +1,6 @@
 package com.example.xyzreader.ui;
 
+import android.content.res.TypedArray;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.content.Context;
@@ -82,6 +83,15 @@ public class ArticleListActivity extends AppCompatActivity
         if (savedInstanceState == null) {
             startUpdaterService();
         }
+
+        final TypedArray styledAttributes = getTheme().obtainStyledAttributes(
+                new int[] { android.R.attr.actionBarSize });
+
+        int mActionBarSize = (int) styledAttributes.getDimension(0, 0);
+        styledAttributes.recycle();
+
+        Log.e("~~", String.valueOf(mActionBarSize));
+
     }
 
     @Override
