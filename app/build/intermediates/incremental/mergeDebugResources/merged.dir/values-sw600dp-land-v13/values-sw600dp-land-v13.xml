@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="is_tablet">true</bool>
+    <dimen name="appbar_height_collapsed">64dp</dimen>
+    <dimen name="appbar_height_expanded">128dp</dimen>
+    <dimen name="appbar_logo_padding">4dp</dimen>
+    <dimen name="content_padding_height_bottom">140dp</dimen>
+    <dimen name="content_padding_height_top">140dp</dimen>
+    <dimen name="detail_body_text_size">22sp</dimen>
+    <dimen name="detail_content_padding_width">140dp</dimen>
+    <dimen name="detail_inner_width_margin">64dp</dimen>
+    <dimen name="detail_title_text_size">42sp</dimen>
+    <dimen name="fab_margin">24dp</dimen>
+    <dimen name="main_content_padding_height_top">140dp</dimen>
+    <dimen name="main_content_padding_width">64dp</dimen>
+</resources>

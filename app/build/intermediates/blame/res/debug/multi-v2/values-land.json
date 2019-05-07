@@ -1,0 +1,55 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Android\\XYZReader\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\b71b8574c36c017619585d2a68bfa9c0\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
+                    }
+                },
+                {
+                    "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\values-land\\dimens.xml",
+                    "from": {
+                        "startLines": "4,3,5,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "104,49,160,219",
+                        "endColumns": "54,53,57,62",
+                        "endOffsets": "154,98,213,277"
+                    },
+                    "to": {
+                        "startLines": "5,6,7,8",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "264,319,373,431",
+                        "endColumns": "54,53,57,62",
+                        "endOffsets": "314,368,426,489"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Drew\\.gradle\\caches\\transforms-2\\files-2.1\\7674ce4d9ce9645527b705703ad81999\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "10",
+                        "endOffsets": "222"
+                    },
+                    "to": {
+                        "startLines": "9",
+                        "startColumns": "4",
+                        "startOffsets": "494",
+                        "endLines": "12",
+                        "endColumns": "10",
+                        "endOffsets": "661"
+                    }
+                }
+            ]
+        }
+    ]
+}

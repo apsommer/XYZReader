@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Android\\XYZReader\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\values-sw600dp-land\\dimens.xml",
+                    "from": {
+                        "startLines": "4,3,14,7,5,12,9,10,11,13,6,8",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "106,50,681,287,162,584,409,471,529,638,222,350",
+                        "endColumns": "54,54,49,61,58,52,60,56,53,41,63,57",
+                        "endOffsets": "156,100,726,344,216,632,465,523,578,675,281,403"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "94,149,204,254,316,375,428,489,546,600,642,706",
+                        "endColumns": "54,54,49,61,58,52,60,56,53,41,63,57",
+                        "endOffsets": "144,199,249,311,370,423,484,541,595,637,701,759"
+                    }
+                },
+                {
+                    "source": "C:\\Android\\XYZReader\\app\\src\\main\\res\\values-sw600dp-land\\bools.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "39",
+                        "endColumns": "38",
+                        "endOffsets": "73"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "38",
+                        "endOffsets": "89"
+                    }
+                }
+            ]
+        }
+    ]
+}
